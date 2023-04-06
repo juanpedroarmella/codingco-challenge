@@ -6,7 +6,7 @@ import {
   useTheme
 } from '@mui/material/styles'
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+export default function App ({ Component, pageProps }: AppProps): JSX.Element {
   const theme = useTheme()
   return (
     <StyledEngineProvider injectFirst>
