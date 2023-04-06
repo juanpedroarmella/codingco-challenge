@@ -5,7 +5,7 @@ import MetaTags from '@/components/atoms/MetaTags'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home (): JSX.Element {
+export default function Home(): JSX.Element {
   return (
     <>
       <MetaTags />
@@ -19,8 +19,7 @@ export default function Home (): JSX.Element {
             <a
               href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
               target='_blank'
-              rel='noopener noreferrer'
-            >
+              rel='noopener noreferrer'>
               By{' '}
               <Image
                 src='/vercel.svg'
@@ -59,8 +58,7 @@ export default function Home (): JSX.Element {
             href='https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
             className={styles.card}
             target='_blank'
-            rel='noopener noreferrer'
-          >
+            rel='noopener noreferrer'>
             <h2 className={inter.className}>
               Docs <span>-&gt;</span>
             </h2>
@@ -73,8 +71,7 @@ export default function Home (): JSX.Element {
             href='https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
             className={styles.card}
             target='_blank'
-            rel='noopener noreferrer'
-          >
+            rel='noopener noreferrer'>
             <h2 className={inter.className}>
               Learn <span>-&gt;</span>
             </h2>
@@ -87,8 +84,7 @@ export default function Home (): JSX.Element {
             href='https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
             className={styles.card}
             target='_blank'
-            rel='noopener noreferrer'
-          >
+            rel='noopener noreferrer'>
             <h2 className={inter.className}>
               Templates <span>-&gt;</span>
             </h2>
@@ -101,8 +97,7 @@ export default function Home (): JSX.Element {
             href='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
             className={styles.card}
             target='_blank'
-            rel='noopener noreferrer'
-          >
+            rel='noopener noreferrer'>
             <h2 className={inter.className}>
               Deploy <span>-&gt;</span>
             </h2>
