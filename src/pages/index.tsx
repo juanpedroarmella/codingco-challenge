@@ -1,11 +1,9 @@
-import Image from 'next/image'
-import MetaTags from '@/components/atoms/MetaTags'
+import Typography from '@mui/material/Typography'
 
-export default function Home (): JSX.Element {
+export default function Home(): JSX.Element {
   return (
     <>
-      <MetaTags />
-      <main />
+      <Typography>test</Typography>
     </>
   )
 }

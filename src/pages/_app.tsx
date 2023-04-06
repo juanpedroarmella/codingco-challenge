@@ -5,14 +5,17 @@ import {
   ThemeProvider,
   useTheme
 } from '@mui/material/styles'
+import Layout from '@/components/layout/Layout'
 
-export default function App ({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
   const theme = useTheme()
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Component {...pageProps} />
+        <Layout>
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </StyledEngineProvider>
   )
