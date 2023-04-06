@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && ts-standard --fix"
+    "lint": "next lint && ts-standard --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -20,6 +21,7 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
+    "husky": "^8.0.3",
     "ts-standard": "^12.0.2"
   }
 }
