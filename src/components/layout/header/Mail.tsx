@@ -17,7 +17,7 @@ const Mail: React.FC = (): JSX.Element => {
       height='19.855'
     >
       <defs>
-        <clipPath id='clip-path'>
+        <clipPath>
           <rect
             id='Rectángulo_18314'
             data-name='Rectángulo 18314'
@@ -57,11 +57,7 @@ const Mail: React.FC = (): JSX.Element => {
           data-name='Grupo 11786'
           transform='translate(0 3.848)'
         >
-          <g
-            id='Grupo_11785'
-            data-name='Grupo 11785'
-            clip-path='url(#clip-path)'
-          >
+          <g id='Grupo_11785' data-name='Grupo 11785'>
             <g
               id='Grupo_11784'
               data-name='Grupo 11784'

@@ -6,6 +6,18 @@ const defaultColors = {
   }
 }
 
+const breakpoints = {
+  breakpoints: {
+    values: {
+      xs: 540,
+      sm: 720,
+      md: 960,
+      lg: 1440,
+      xl: 1320
+    }
+  }
+}
+
 const darkTheme = createTheme({
   palette: {
     ...defaultColors,
@@ -15,7 +27,8 @@ const darkTheme = createTheme({
     text: {
       primary: '#FFFFFF'
     }
-  }
+  },
+  ...breakpoints
 })
 
 const lightTheme = createTheme({
@@ -27,7 +40,8 @@ const lightTheme = createTheme({
     text: {
       primary: '#000000'
     }
-  }
+  },
+  ...breakpoints
 })
 
 const orangeTheme = createTheme({
@@ -39,7 +53,8 @@ const orangeTheme = createTheme({
     text: {
       primary: '#FFFFFF'
     }
-  }
+  },
+  ...breakpoints
 })
 
 const yellowTheme = createTheme({
@@ -51,7 +66,8 @@ const yellowTheme = createTheme({
     text: {
       primary: '#000000'
     }
-  }
+  },
+  ...breakpoints
 })
 
 export { darkTheme, lightTheme, orangeTheme, yellowTheme }

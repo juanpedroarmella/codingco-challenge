@@ -6,9 +6,9 @@ const HeaderMainContainer = styled(Box)(({ theme }: { theme?: Theme }) => {
   return {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     background: theme?.palette.background.default,
-    height: '64px'
+    minHeight: '100vh'
   }
 })
 

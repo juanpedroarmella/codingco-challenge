@@ -26,7 +26,6 @@ const MetaTags: React.FC = (): JSX.Element => {
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:title' content={pageTitle} />
       <meta name='twitter:description' content={pageDescription} />
-      <link rel='icon' href='/favicon.ico' />
     </Head>
   )
 }

@@ -13,20 +13,22 @@ const NavContainer = styled(Box)<NavContainerProps>(({ theme }) => {
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
+    height: '64px',
+    zIndex: 1,
     [theme.breakpoints.down('xs')]: {
-      maxWidth: 540
+      maxWidth: theme.breakpoints.values.xs
     },
     [theme.breakpoints.down('sm')]: {
-      maxWidth: 720
+      maxWidth: theme.breakpoints.values.sm
     },
     [theme.breakpoints.up('md')]: {
-      maxWidth: 960
+      maxWidth: theme.breakpoints.values.md
     },
     [theme.breakpoints.up('lg')]: {
-      maxWidth: 1140
+      maxWidth: theme.breakpoints.values.lg
     },
     [theme.breakpoints.up('xl')]: {
-      maxWidth: 1320
+      maxWidth: theme.breakpoints.values.xl
     }
   }
 })
