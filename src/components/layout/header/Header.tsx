@@ -1,13 +1,13 @@
 import Box from '@mui/material/Box'
-import { styled } from '@mui/material/styles'
+import { styled, Theme } from '@mui/material/styles'
 import Nav from './Nav'
 
-const HeaderMainContainer = styled(Box)(() => {
+const HeaderMainContainer = styled(Box)(({ theme }: { theme?: Theme }) => {
   return {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    background: '#000000'
+    background: theme?.palette.background.default
   }
 })
 
