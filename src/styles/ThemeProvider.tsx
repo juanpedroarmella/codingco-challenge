@@ -10,14 +10,13 @@ interface ThemeSwitcherProps {
 
 const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ children }) => {
   const [currentThemeIndex, setCurrentThemeIndex] = useState(0)
-  const currentTheme = themes[currentThemeIndex]
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentThemeIndex((currentThemeIndex + 1) % themes.length)
-    }, 2000)
-    return () => clearInterval(intervalId)
-  }, [currentThemeIndex])
+    const randomIndex = Math.floor(Math.random() * themes.length)
+    setCurrentThemeIndex(randomIndex)
+  }, [])
+
+  const currentTheme = themes[currentThemeIndex]
 
   return <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
 }
