@@ -5,6 +5,11 @@ const StyledLogo = styled('svg')(({ theme }) => {
   return {
     '& path': {
       fill: theme.palette.text.primary
+    },
+    [theme.breakpoints.down('sm')]: {
+      '& path': {
+        fill: '#000000'
+      }
     }
   }
 })
@@ -16,18 +21,15 @@ const Logo: React.FC = (): JSX.Element => {
         xmlns='http://www.w3.org/2000/svg'
         width='116.847'
         height='24.713'
-        viewBox='0 0 116.847 24.713'
-      >
+        viewBox='0 0 116.847 24.713'>
         <g
           id='Grupo_12704'
           data-name='Grupo 12704'
-          transform='translate(-1.83 -170.568)'
-        >
+          transform='translate(-1.83 -170.568)'>
           <g
             id='Grupo_12297'
             data-name='Grupo 12297'
-            transform='translate(1.83 170.568)'
-          >
+            transform='translate(1.83 170.568)'>
             <path
               id='Trazado_12002'
               data-name='Trazado 12002'

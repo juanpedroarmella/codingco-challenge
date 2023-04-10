@@ -1,5 +1,7 @@
+import useIsMobile from '@/hooks/useIsMobile'
 import Box from '@mui/material/Box'
 import { styled, Theme } from '@mui/material/styles'
+import MobileHeader from './MobileHeader'
 import Nav from './Nav'
 
 const HeaderMainContainer = styled(Box)(({ theme }: { theme?: Theme }) => {
@@ -13,6 +15,8 @@ const HeaderMainContainer = styled(Box)(({ theme }: { theme?: Theme }) => {
 })
 
 const Header: React.FC = (): JSX.Element => {
+  const isMobile = useIsMobile()
+  if (isMobile) return <MobileHeader />
   return (
     <HeaderMainContainer data-testid='header-container' component='header'>
       <Nav />
