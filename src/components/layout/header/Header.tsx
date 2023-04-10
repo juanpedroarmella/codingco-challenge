@@ -2,7 +2,7 @@ import useIsMobile from '@/hooks/useIsMobile'
 import Box from '@mui/material/Box'
 import { styled, Theme } from '@mui/material/styles'
 import MobileHeader from './MobileHeader'
-import Nav from './Nav'
+import Nav from './components/Nav'
 
 const HeaderMainContainer = styled(Box)(({ theme }: { theme?: Theme }) => {
   return {

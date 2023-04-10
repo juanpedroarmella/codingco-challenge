@@ -1,7 +1,7 @@
 import SocialButton from '@/components/atoms/SocialButton'
-import Globe from './Globe'
-import Instagram from './Instagram'
-import Mail from './Mail'
+import Globe from './icons/Globe'
+import Instagram from './icons/Instagram'
+import Mail from './icons/Mail'
 
 const SocialLinks: React.FC = (): JSX.Element => {
   return (

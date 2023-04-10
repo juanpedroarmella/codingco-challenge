@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Grupo_12937" data-name="Grupo 12937" transform="translate(-175 -56)">
+    <g id="Elipse_681" data-name="Elipse 681" transform="translate(175 56)" fill="none" stroke="#000" stroke-width="1">
+      <circle cx="12" cy="12" r="12" stroke="none"/>
+      <circle cx="12" cy="12" r="11.5" fill="none"/>
+    </g>
+    <path id="Icon_awesome-phone" data-name="Icon awesome-phone" d="M.441.583,2.909.014a.573.573,0,0,1,.653.33L4.7,3a.568.568,0,0,1-.164.664L3.1,4.843A8.8,8.8,0,0,0,7.3,9.048L8.481,7.61a.569.569,0,0,1,.664-.164L11.8,8.585a.576.576,0,0,1,.332.655l-.57,2.468a.569.569,0,0,1-.555.441A11.01,11.01,0,0,1,0,1.139.569.569,0,0,1,.441.583Z" transform="translate(180.976 61.926)"/>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box'
 import { styled, Theme } from '@mui/material/styles'
-import Logo from './Logo'
+import Logo from './icons/Logo'
 import NavButtons from './NavButtons'
 
 interface NavContainerProps {

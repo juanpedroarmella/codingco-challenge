@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme, Theme } from '@mui/material/styles'
 
 const defaultColors = {
   background: {
@@ -18,56 +18,32 @@ const breakpoints = {
   }
 }
 
-const darkTheme = createTheme({
-  palette: {
-    ...defaultColors,
-    background: {
-      default: '#000000'
-    },
-    text: {
-      primary: '#FFFFFF'
-    }
-  },
-  ...breakpoints
-})
+const fonts = {
+  typography: { fontFamily: "'Work Sans', sans-serif" }
+}
 
-const lightTheme = createTheme({
-  palette: {
-    ...defaultColors,
-    background: {
-      default: '#FFFFFF'
+function createCustomTheme(
+  backgroundDefault: string,
+  textPrimary: string
+): Theme {
+  return createTheme({
+    ...fonts,
+    palette: {
+      ...defaultColors,
+      background: {
+        default: backgroundDefault
+      },
+      text: {
+        primary: textPrimary
+      }
     },
-    text: {
-      primary: '#000000'
-    }
-  },
-  ...breakpoints
-})
+    ...breakpoints
+  })
+}
 
-const orangeTheme = createTheme({
-  palette: {
-    ...defaultColors,
-    background: {
-      default: '#E6511B'
-    },
-    text: {
-      primary: '#FFFFFF'
-    }
-  },
-  ...breakpoints
-})
-
-const yellowTheme = createTheme({
-  palette: {
-    ...defaultColors,
-    background: {
-      default: '#E1DF3C'
-    },
-    text: {
-      primary: '#000000'
-    }
-  },
-  ...breakpoints
-})
+const darkTheme = createCustomTheme('#000000', '#FFFFFF')
+const lightTheme = createCustomTheme('#FFFFFF', '#000000')
+const orangeTheme = createCustomTheme('#E6511B', '#FFFFFF')
+const yellowTheme = createCustomTheme('#E1DF3C', '#000000')
 
 export { darkTheme, lightTheme, orangeTheme, yellowTheme }

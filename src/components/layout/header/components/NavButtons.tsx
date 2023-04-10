@@ -8,7 +8,7 @@ const Nav: React.FC = (): JSX.Element => {
       <NavButton href='#'>Cursos</NavButton>
       <NavButton href='#'>Quiénes somos</NavButton>
       <NavButton href='#'>Noticias frescas</NavButton>
-      <NavButton href='#'>#WeAredoers</NavButton>
+      <NavButton href='#'>#Wearedoers</NavButton>
       <NavButton href='#'>Contacto</NavButton>
       <SocialLinks />
     </Box>
