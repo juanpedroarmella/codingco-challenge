@@ -12,7 +12,8 @@ const MobileHeaderContainer = styled(Box)(({ theme }: { theme?: Theme }) => {
     paddingLeft: '2rem',
     alignItems: 'center',
     background: '#E9E6E1',
-    height: '56px'
+    height: '56px',
+    zIndex: 1
   }
 })
 

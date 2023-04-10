@@ -1,5 +1,6 @@
 import { styled } from '@mui/material/styles'
 import { useCallback, useState } from 'react'
+import MobileDrawer from './MobileDrawer'
 
 const TransparentButton = styled('button')(() => {
   return {
@@ -43,11 +44,14 @@ const IconBar: React.FC = (): JSX.Element => {
   }, [clicked])
 
   return (
-    <TransparentButton onClick={handleClick} aria-label='open-navigation'>
-      <Rect clicked={clicked} />
-      <Rect clicked={clicked} />
-      <Rect clicked={clicked} />
-    </TransparentButton>
+    <>
+      <TransparentButton onClick={handleClick} aria-label='open-navigation'>
+        <Rect clicked={clicked} />
+        <Rect clicked={clicked} />
+        <Rect clicked={clicked} />
+      </TransparentButton>
+      <MobileDrawer open={clicked}>Menú</MobileDrawer>
+    </>
   )
 }
 

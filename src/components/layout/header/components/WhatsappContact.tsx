@@ -10,7 +10,8 @@ const WhatsappContact: React.FC = (): JSX.Element => {
       alignItems='center'
       gap={2}
       href='https://api.whatsapp.com/send?phone=+34612278409'
-      target='_blank'>
+      target='_blank'
+    >
       <Image
         src='/icon-whatsapp-menu.svg'
         width={24}
