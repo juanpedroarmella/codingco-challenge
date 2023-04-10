@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box'
 import { styled, Theme } from '@mui/material/styles'
+import ButtonIconBar from './components/ButtonIconBar'
 import Logo from './components/icons/Logo'
 import WhatsappContact from './components/WhatsappContact'
 
@@ -20,6 +21,7 @@ const MobileHeader: React.FC = (): JSX.Element => {
     <MobileHeaderContainer>
       <Logo />
       <WhatsappContact />
+      <ButtonIconBar />
     </MobileHeaderContainer>
   )
 }

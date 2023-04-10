@@ -22,7 +22,7 @@ const fonts = {
   typography: { fontFamily: "'Work Sans', sans-serif" }
 }
 
-function createCustomTheme(
+function createCustomTheme (
   backgroundDefault: string,
   textPrimary: string
 ): Theme {
