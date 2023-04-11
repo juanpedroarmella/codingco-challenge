@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles'
 import { useCallback, useState } from 'react'
-import MobileDrawer from './MobileDrawer'
+import MobileDrawer from '../../../atoms/MobileDrawer'
+import MobileNav from './MobileNav'
 
 const TransparentButton = styled('button')(() => {
   return {
@@ -50,7 +51,9 @@ const IconBar: React.FC = (): JSX.Element => {
         <Rect clicked={clicked} />
         <Rect clicked={clicked} />
       </TransparentButton>
-      <MobileDrawer open={clicked}>Menú</MobileDrawer>
+      <MobileDrawer open={clicked}>
+        <MobileNav />
+      </MobileDrawer>
     </>
   )
 }

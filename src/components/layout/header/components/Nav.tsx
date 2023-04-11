@@ -15,10 +15,12 @@ const NavContainer = styled(Box)<NavContainerProps>(({ theme }) => {
     width: '100%',
     height: '64px',
     zIndex: 1,
-    [theme.breakpoints.down('xs')]: {
+    margin: '0 2vw',
+    padding: '0 0.75rem',
+    [theme.breakpoints.up('xs')]: {
       maxWidth: theme.breakpoints.values.xs
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.up('sm')]: {
       maxWidth: theme.breakpoints.values.sm
     },
     [theme.breakpoints.up('md')]: {

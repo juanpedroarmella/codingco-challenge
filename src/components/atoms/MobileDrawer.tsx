@@ -7,10 +7,12 @@ const Drawer = styled(Box)(({ open }: { open: boolean }) => {
     position: 'absolute',
     top: '56px',
     left: 0,
-    width: '100vw',
-    zIndex: open ? 1 : -6,
-    transform: open ? 'translateY(0)' : 'translateY(-56px)',
-    transition: 'z-index 0.2s , transform 0.2s '
+    width: '100%',
+    padding: '0 !important',
+    margin: 0,
+    zIndex: -6,
+    transform: open ? 'translateY(0)' : 'translateY(-100vw)',
+    transition: 'transform 0.6s'
   }
 })
 
