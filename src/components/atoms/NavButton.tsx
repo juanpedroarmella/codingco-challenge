@@ -1,13 +1,13 @@
 import Link from '@mui/material/Link'
-import { styled, Theme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 
 interface NavButtonProps {
-  theme?: Theme
+  scrolled?: string
 }
 
-const NavButton = styled(Link)<NavButtonProps>(({ theme }) => {
+const NavButton = styled(Link)<NavButtonProps>(({ theme, scrolled }) => {
   return {
-    color: theme?.palette.text.primary,
+    color: scrolled === 'true' ? '#FFFFFF' : theme?.palette.text.primary,
     fontSize: '16px',
     textAlign: 'center',
     padding: '20px',

@@ -1,7 +1,8 @@
 import MobileDrawer from '@/components/atoms/MobileDrawer'
+import { useScroll } from '@/hooks/useScroll'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import ButtonIconBar from './components/ButtonIconBar'
 import Logo from './components/icons/Logo'
 import MobileNav from './components/MobileNav'
@@ -25,11 +26,17 @@ const BarContainer = styled(Box)(() => {
 })
 
 const MobileHeader: React.FC = (): JSX.Element => {
-  const [clicked, setClicked] = useState<boolean>(false)
+  const [open, setOpen] = useState<boolean>(false)
+
+  const scrolled = useScroll()
+
+  useEffect(() => {
+    if (scrolled) setOpen(false)
+  }, [scrolled])
 
   const handleClick = useCallback(() => {
-    setClicked(!clicked)
-  }, [clicked])
+    setOpen(!open)
+  }, [open])
 
   return (
     <header>
@@ -37,9 +44,9 @@ const MobileHeader: React.FC = (): JSX.Element => {
         <BarContainer>
           <Logo />
           <WhatsappContact />
-          <ButtonIconBar handleClick={handleClick} clicked={clicked} />
+          <ButtonIconBar handleClick={handleClick} clicked={open} />
         </BarContainer>
-        <MobileDrawer open={clicked}>
+        <MobileDrawer open={open}>
           <MobileNav />
         </MobileDrawer>
       </nav>

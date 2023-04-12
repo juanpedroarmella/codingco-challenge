@@ -9,7 +9,7 @@ const SvgSocial = styled(StyledSvg)<Props>(({ theme, color }) => {
   return {
     '& path': {
       [theme.breakpoints.down('md')]: {
-        fill: color ?? '#E9E6E1'
+        fill: color ?? '#707070'
       }
     },
     [theme.breakpoints.down('md')]: {

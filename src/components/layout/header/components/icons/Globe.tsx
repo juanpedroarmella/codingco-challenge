@@ -1,3 +1,4 @@
+import { useScroll } from '@/hooks/useScroll'
 import SvgSocial from './SvgSocial'
 
 interface GlobeProps {
@@ -5,8 +6,10 @@ interface GlobeProps {
 }
 
 const Globe: React.FC<GlobeProps> = ({ color }): JSX.Element => {
+  const scrolled = useScroll()
   return (
     <SvgSocial
+      scrolled={scrolled.toString()}
       xmlns='http://www.w3.org/2000/svg'
       width='20.726'
       height='20.726'

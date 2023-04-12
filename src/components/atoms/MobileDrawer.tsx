@@ -1,7 +1,11 @@
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 
-const Drawer = styled(Box)(({ open }: { open: boolean }) => {
+interface DrawerProps {
+  open: boolean
+}
+
+const Drawer = styled(Box)<DrawerProps>(({ open }) => {
   return {
     background: '#E9E6E1',
     position: 'absolute',
@@ -11,7 +15,7 @@ const Drawer = styled(Box)(({ open }: { open: boolean }) => {
     padding: '0 !important',
     margin: 0,
     zIndex: 0,
-    transform: open ? 'translateY(0)' : 'translateY(-200vw)',
+    transform: open ? 'translateY(0)' : 'translateY(-250vw)',
     transition: 'transform 0.3s'
   }
 })

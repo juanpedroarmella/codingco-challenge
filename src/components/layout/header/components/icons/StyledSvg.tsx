@@ -1,10 +1,14 @@
 import { styled } from '@mui/material/styles'
 
-const StyledSvg = styled('svg')(({ theme }) => {
+interface StyledSvgProps {
+  scrolled: string
+}
+
+const StyledSvg = styled('svg')<StyledSvgProps>(({ theme, scrolled }) => {
   return {
     verticalAlign: 'middle',
     '& path': {
-      fill: theme.palette.text.primary,
+      fill: scrolled === 'true' ? '#FFFFFF' : theme.palette.text.primary,
       [theme.breakpoints.down('md')]: {
         fill: '#000000'
       }

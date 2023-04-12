@@ -1,13 +1,9 @@
 import Box from '@mui/material/Box'
-import { styled, Theme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import Logo from './icons/Logo'
 import NavButtons from './NavButtons'
 
-interface NavContainerProps {
-  theme?: Theme
-}
-
-const NavContainer = styled(Box)<NavContainerProps>(({ theme }) => {
+const NavContainer = styled(Box)(({ theme }) => {
   return {
     display: 'flex',
     justifyContent: 'space-between',
