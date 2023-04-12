@@ -1,8 +1,8 @@
-import StyledSvg from './StyledSvg'
+import SvgSocial from './SvgSocial'
 
 const Instagram: React.FC = (): JSX.Element => {
   return (
-    <StyledSvg
+    <SvgSocial
       xmlns='http://www.w3.org/2000/svg'
       width='20.726'
       height='20.57'
@@ -48,7 +48,7 @@ const Instagram: React.FC = (): JSX.Element => {
           </g>
         </g>
       </g>
-    </StyledSvg>
+    </SvgSocial>
   )
 }
 

@@ -1,8 +1,8 @@
-import StyledSvg from './StyledSvg'
+import SvgSocial from './SvgSocial'
 
 const Globe: React.FC = (): JSX.Element => {
   return (
-    <StyledSvg
+    <SvgSocial
       xmlns='http://www.w3.org/2000/svg'
       width='20.726'
       height='20.726'
@@ -15,7 +15,7 @@ const Globe: React.FC = (): JSX.Element => {
         transform='translate(0 20.726) rotate(-90)'
         fill='#e9e6e1'
       />
-    </StyledSvg>
+    </SvgSocial>
   )
 }
 
