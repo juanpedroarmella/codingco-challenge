@@ -1,13 +1,21 @@
 import { styled } from '@mui/material/styles'
 import StyledSvg from './StyledSvg'
 
-const SvgSocial = styled(StyledSvg)(({ theme }) => {
+interface Props {
+  color?: string
+}
+
+const SvgSocial = styled(StyledSvg)<Props>(({ theme, color }) => {
   return {
+    '& path': {
+      [theme.breakpoints.down('md')]: {
+        fill: color ?? '#E9E6E1'
+      }
+    },
     [theme.breakpoints.down('md')]: {
       width: '34px',
       height: '34px',
-      margin: '13px',
-      fill: '#707070'
+      margin: '13px'
     }
   }
 })

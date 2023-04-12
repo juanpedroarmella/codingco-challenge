@@ -1,5 +1,6 @@
 import MobileAddress from '@/components/atoms/MobileAddress'
 import MobileNavButton from '@/components/atoms/MobileNavButton'
+import WorldWide from '@/components/atoms/WorldWide'
 import Box from '@mui/material/Box'
 
 const MobileNav: React.FC = (): JSX.Element => {
@@ -11,6 +12,7 @@ const MobileNav: React.FC = (): JSX.Element => {
       <MobileNavButton href='#'>#Wearedoers</MobileNavButton>
       <MobileNavButton href='#'>Contacto</MobileNavButton>
       <MobileAddress />
+      <WorldWide />
     </Box>
   )
 }

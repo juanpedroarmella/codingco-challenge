@@ -39,3 +39,10 @@
   font-weight: normal;
   font-style: italic;
 }
+
+@font-face {
+  font-family: 'Larken';
+  src: url('/fonts/Larken/LarkenDEMO-Light.otf');
+  font-weight: light;
+  font-style: normal;
+}
