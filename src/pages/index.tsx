@@ -1,9 +1,10 @@
+import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography'
 
-export default function Home(): JSX.Element {
+export default function Home (): JSX.Element {
   return (
-    <main style={{ zIndex: -7 }}>
+    <Box>
       <Typography>test</Typography>
-    </main>
+    </Box>
   )
 }

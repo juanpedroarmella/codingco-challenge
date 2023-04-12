@@ -1,13 +1,18 @@
 import Link from '@mui/material/Link'
 import { styled, Theme } from '@mui/material/styles'
 
-const NavButton = styled(Link)(({ theme }: { theme?: Theme }) => {
+interface NavButtonProps {
+  theme?: Theme
+}
+
+const NavButton = styled(Link)<NavButtonProps>(({ theme }) => {
   return {
     color: theme?.palette.text.primary,
     fontSize: '16px',
     textAlign: 'center',
     padding: '20px',
     textDecoration: 'none',
+    fontFamily: 'Work Sans',
     position: 'relative',
     '&:before': {
       width: '44px',
@@ -29,6 +34,14 @@ const NavButton = styled(Link)(({ theme }: { theme?: Theme }) => {
     },
     '&:hover:before': {
       opacity: 1
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: '24px',
+      fontFamily: 'Larken',
+      fontWeight: 700,
+      color: '#000000',
+      padding: '0.5rem 0',
+      width: '100%'
     }
   }
 })

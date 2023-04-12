@@ -1,17 +1,8 @@
-import { styled } from '@mui/material/styles'
-
-const StyledMail = styled('svg')(({ theme }) => {
-  return {
-    verticalAlign: 'middle',
-    '& path': {
-      fill: theme.palette.text.primary
-    }
-  }
-})
+import StyledSvg from './StyledSvg'
 
 const Mail: React.FC = (): JSX.Element => {
   return (
-    <StyledMail
+    <StyledSvg
       xmlns='http://www.w3.org/2000/svg'
       width='24.552'
       height='19.855'
@@ -74,7 +65,7 @@ const Mail: React.FC = (): JSX.Element => {
           </g>
         </g>
       </g>
-    </StyledMail>
+    </StyledSvg>
   )
 }
 

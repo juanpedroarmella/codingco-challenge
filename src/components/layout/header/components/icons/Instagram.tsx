@@ -1,17 +1,8 @@
-import { styled } from '@mui/material/styles'
-
-const StyledInstagram = styled('svg')(({ theme }) => {
-  return {
-    verticalAlign: 'middle',
-    '& path': {
-      fill: theme.palette.text.primary
-    }
-  }
-})
+import StyledSvg from './StyledSvg'
 
 const Instagram: React.FC = (): JSX.Element => {
   return (
-    <StyledInstagram
+    <StyledSvg
       xmlns='http://www.w3.org/2000/svg'
       width='20.726'
       height='20.57'
@@ -57,7 +48,7 @@ const Instagram: React.FC = (): JSX.Element => {
           </g>
         </g>
       </g>
-    </StyledInstagram>
+    </StyledSvg>
   )
 }
 

@@ -1,7 +1,4 @@
 import { styled } from '@mui/material/styles'
-import { useCallback, useState } from 'react'
-import MobileDrawer from '../../../atoms/MobileDrawer'
-import MobileNav from './MobileNav'
 
 const TransparentButton = styled('button')(() => {
   return {
@@ -37,13 +34,12 @@ const Rect = styled('span')(({ clicked }: { clicked: boolean }) => {
   }
 })
 
-const IconBar: React.FC = (): JSX.Element => {
-  const [clicked, setClicked] = useState<boolean>(false)
+interface Props {
+  handleClick: () => void
+  clicked: boolean
+}
 
-  const handleClick = useCallback(() => {
-    setClicked(!clicked)
-  }, [clicked])
-
+const IconBar: React.FC<Props> = ({ handleClick, clicked }): JSX.Element => {
   return (
     <>
       <TransparentButton onClick={handleClick} aria-label='open-navigation'>
@@ -51,9 +47,6 @@ const IconBar: React.FC = (): JSX.Element => {
         <Rect clicked={clicked} />
         <Rect clicked={clicked} />
       </TransparentButton>
-      <MobileDrawer open={clicked}>
-        <MobileNav />
-      </MobileDrawer>
     </>
   )
 }

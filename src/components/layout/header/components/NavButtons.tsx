@@ -4,7 +4,7 @@ import SocialLinks from './SocialLinks'
 
 const Nav: React.FC = (): JSX.Element => {
   return (
-    <Box aria-label='Navegacion principal'>
+    <Box aria-label='Navegacion principal' display='flex' alignItems='center'>
       <NavButton href='#'>Cursos</NavButton>
       <NavButton href='#'>Quiénes somos</NavButton>
       <NavButton href='#'>Noticias frescas</NavButton>

@@ -1,21 +1,5 @@
-import { styled } from '@mui/material/styles'
-import Link from 'next/link'
-
-const StyledListItem = styled('li')(() => {
-  return {
-    borderTop: '1px solid black',
-    listStyle: 'none',
-    padding: '1rem 2rem',
-    margin: 'auto 1rem',
-    textAlign: 'center'
-  }
-})
-
-const MobileNavLink = styled(Link)(() => {
-  return {
-    textDecoration: 'none'
-  }
-})
+import NavBorderedContainer from './NavBorderedContainer'
+import NavButton from './NavButton'
 
 interface Props {
   href: string
@@ -23,9 +7,9 @@ interface Props {
 }
 const MobileNavButton: React.FC<Props> = ({ href, children }): JSX.Element => {
   return (
-    <StyledListItem>
-      <MobileNavLink href={href}>{children}</MobileNavLink>
-    </StyledListItem>
+    <NavBorderedContainer component='li'>
+      <NavButton href={href}>{children}</NavButton>
+    </NavBorderedContainer>
   )
 }
 

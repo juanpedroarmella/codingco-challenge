@@ -1,17 +1,8 @@
-import { styled } from '@mui/material/styles'
-
-const SyledGlobe = styled('svg')(({ theme }) => {
-  return {
-    verticalAlign: 'middle',
-    '& path': {
-      fill: theme.palette.text.primary
-    }
-  }
-})
+import StyledSvg from './StyledSvg'
 
 const Globe: React.FC = (): JSX.Element => {
   return (
-    <SyledGlobe
+    <StyledSvg
       xmlns='http://www.w3.org/2000/svg'
       width='20.726'
       height='20.726'
@@ -24,7 +15,7 @@ const Globe: React.FC = (): JSX.Element => {
         transform='translate(0 20.726) rotate(-90)'
         fill='#e9e6e1'
       />
-    </SyledGlobe>
+    </StyledSvg>
   )
 }
 

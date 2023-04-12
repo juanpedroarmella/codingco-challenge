@@ -10,9 +10,9 @@ const Drawer = styled(Box)(({ open }: { open: boolean }) => {
     width: '100%',
     padding: '0 !important',
     margin: 0,
-    zIndex: -6,
-    transform: open ? 'translateY(0)' : 'translateY(-100vw)',
-    transition: 'transform 0.6s'
+    zIndex: 0,
+    transform: open ? 'translateY(0)' : 'translateY(-200vw)',
+    transition: 'transform 0.3s'
   }
 })
 

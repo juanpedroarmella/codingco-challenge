@@ -1,8 +1,10 @@
 import GlobalStyles from '@mui/material/GlobalStyles'
+import fonts from './fonts.module.css'
 
 const GlobalCustomStyle = (): JSX.Element => (
   <GlobalStyles
     styles={{
+      fonts,
       body: {
         margin: 0,
         padding: 0,
@@ -22,12 +24,10 @@ const GlobalCustomStyle = (): JSX.Element => (
         maxWidth: '100%'
       },
       '*': {
-        boxSizing: 'border-box',
-        fontFamily: 'Work Sans, sans-serif ',
-        fontWeight: 400
+        boxSizing: 'border-box'
       },
       a: {
-        textDecoration: 'none ',
+        textDecoration: 'none',
         color: 'inherit'
       }
     }}
