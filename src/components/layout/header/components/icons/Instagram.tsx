@@ -1,14 +1,22 @@
-import { useScroll } from '@/hooks/useScroll'
 import SvgSocial from './SvgSocial'
 
-const Instagram: React.FC = (): JSX.Element => {
-  const scrolled = useScroll()
+interface InstagramProps {
+  fill: string
+  width: number | string
+  height: number | string
+}
+
+const Instagram: React.FC<InstagramProps> = ({
+  fill,
+  width,
+  height
+}): JSX.Element => {
   return (
     <SvgSocial
-      scrolled={scrolled.toString()}
+      fill={fill}
+      width={width ?? 20.726}
+      height={height ?? 20.57}
       xmlns='http://www.w3.org/2000/svg'
-      width='20.726'
-      height='20.57'
       viewBox='0 0 20.726 20.57'
     >
       <g

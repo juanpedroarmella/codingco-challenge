@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import SocialLinks from '../layout/header/components/SocialLinks'
+import Address from './Address'
 import NavBorderedContainer from './NavBorderedContainer'
 
 const MobileAddress: React.FC = (): JSX.Element => {
@@ -12,12 +13,7 @@ const MobileAddress: React.FC = (): JSX.Element => {
       flexDirection='column'
       gap={2}
     >
-      <Box
-        component='address'
-        display='grid'
-        fontStyle='normal'
-        fontFamily='Work Sans'
-      >
+      <Box>
         <Typography
           variant='h6'
           fontFamily='Larken'
@@ -27,17 +23,15 @@ const MobileAddress: React.FC = (): JSX.Element => {
         >
           Ven a conocernos
         </Typography>
-        <Typography>Calle de las huertas 48,</Typography>
-        <Typography>28014, Madrid</Typography>
-
-        <Box display='flex' justifyContent='center' gap={1}>
-          <a href='tel:+34 915 76 68 76'>+34 915 76 68 76</a>
-          <Typography>|</Typography>
-          <a href='tel:+34 612 27 84 09'>+34 612 27 84 09</a>
-        </Box>
-        <a href='mailto:madrid@brotherad.com'>madrid@brotherad.com</a>
+        <Address color='#000000' />
       </Box>
-      <SocialLinks />
+      <SocialLinks
+        width='34px'
+        height='27px'
+        px='12.5px'
+        fill='#707070'
+        my='16.5px'
+      />
     </NavBorderedContainer>
   )
 }

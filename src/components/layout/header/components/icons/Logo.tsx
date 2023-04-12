@@ -1,15 +1,20 @@
 import { useScroll } from '@/hooks/useScroll'
 import { styled } from '@mui/material/styles'
 import Link from 'next/link'
-import StyledSvg from './StyledSvg'
-
 interface StyledLogoProps {
   scrolled: string
 }
 
-const StyledLogo = styled(StyledSvg)<StyledLogoProps>(({ scrolled }) => {
+const StyledLogo = styled('svg')<StyledLogoProps>(({ scrolled, theme }) => {
   return {
+    verticalAlign: 'middle',
     opacity: 1,
+    '& path': {
+      fill: scrolled === 'true' ? '#FFFFFF' : theme.palette.text.primary,
+      [theme.breakpoints.down('md')]: {
+        fill: '#000000'
+      }
+    },
     '& path:nth-of-type(n+3)': {
       transition: 'opacity 0.3s',
       opacity: scrolled === 'true' ? 1 : 0

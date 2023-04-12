@@ -1,14 +1,18 @@
-import { useScroll } from '@/hooks/useScroll'
 import SvgSocial from './SvgSocial'
 
-const Mail: React.FC = (): JSX.Element => {
-  const scrolled = useScroll()
+interface MailProps {
+  fill: string
+  width: number | string
+  height: number | string
+}
+
+const Mail: React.FC<MailProps> = ({ fill, width, height }): JSX.Element => {
   return (
     <SvgSocial
-      scrolled={scrolled.toString()}
+      fill={fill}
+      width={width ?? 24.552}
+      height={height ?? 19.855}
       xmlns='http://www.w3.org/2000/svg'
-      width='24.552'
-      height='19.855'
       viewBox='0 0 24.552 19.855'
     >
       <g

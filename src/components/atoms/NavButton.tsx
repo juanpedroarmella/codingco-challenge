@@ -10,7 +10,7 @@ const NavButton = styled(Link)<NavButtonProps>(({ theme, scrolled }) => {
     color: scrolled === 'true' ? '#FFFFFF' : theme?.palette.text.primary,
     fontSize: '16px',
     textAlign: 'center',
-    padding: '20px',
+    padding: '15px 20px',
     textDecoration: 'none',
     fontFamily: 'Work Sans',
     position: 'relative',

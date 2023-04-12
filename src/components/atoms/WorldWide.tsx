@@ -17,7 +17,7 @@ const BlackContainer = styled(Box)(() => {
 const WolrdWide: React.FC = (): JSX.Element => {
   return (
     <BlackContainer component='li'>
-      <Globe color='#E9E6E1' />
+      <Globe fill='#E9E6E1' width='31px' height='31px' />
       <Typography
         variant='h6'
         color='#E9E6E1'
@@ -27,7 +27,7 @@ const WolrdWide: React.FC = (): JSX.Element => {
       >
         Worldwide
       </Typography>
-      <Globe color='#E9E6E1' />
+      <Globe fill='#E9E6E1' width='31px' height='31px' />
     </BlackContainer>
   )
 }

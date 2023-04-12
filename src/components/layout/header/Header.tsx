@@ -13,10 +13,10 @@ const HeaderMainContainer = styled(Box)<Props>(({ theme, scrolled }) => {
   return {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     backgroundColor:
       scrolled === 'true' ? '#ff1f57' : theme.palette.background.default,
-    minHeight: '64px',
+    minHeight: '56px',
     position: 'fixed',
     transition: 'background 0.3s',
     width: '100%'
