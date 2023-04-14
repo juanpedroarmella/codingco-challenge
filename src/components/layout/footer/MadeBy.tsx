@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 const MadeBy: React.FC = (): JSX.Element => {
   return (
     <Box fontFamily='Gotham' fontStyle='normal' color='#707070'>
-      <Typography display='inline' fontWeight='light' fontSize='14px'>
+      <Typography display='inline' fontWeight='light' fontSize='14px' pr={1}>
         Made by
       </Typography>
       <Typography display='inline' fontWeight='bold' fontSize='16px'>

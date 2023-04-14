@@ -9,11 +9,11 @@ const Drawer = styled(Box)<DrawerProps>(({ open }) => {
   const vhRelativeToScroll = (window.scrollY / window.innerHeight) * 100
   return {
     background: '#E9E6E1',
-    position: 'absolute',
+    position: 'relative',
     top: '56px',
     left: 0,
     width: '100%',
-    padding: '0 !important',
+    padding: '0',
     margin: 0,
     zIndex: 0,
     transform: open
