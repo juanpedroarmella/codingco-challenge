@@ -1,7 +1,10 @@
 import Address from '@/components/atoms/Address'
+import useIsMobile from '@/hooks/useIsMobile'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 import FooterLogo from './FooterLogo'
+import FooterNav from './FooterNav'
+import MadeBy from './MadeBy'
 import SocialAndCopyright from './SocialAndCopyright'
 
 const FooterMainContainer = styled(Box)(({ theme }) => {
@@ -34,6 +37,7 @@ const FooterMainContainer = styled(Box)(({ theme }) => {
 })
 
 const Footer: React.FC = (): JSX.Element => {
+  const isMobile = useIsMobile()
   return (
     <Box
       data-testid='footer-container'
@@ -42,9 +46,23 @@ const Footer: React.FC = (): JSX.Element => {
       p={4}
     >
       <FooterMainContainer>
-        <SocialAndCopyright />
-        <FooterLogo />
-        <Address color='#707070' />
+        {isMobile
+          ? (
+            <>
+              <FooterLogo />
+              <FooterNav />
+              <Address color='#707070' />
+              <SocialAndCopyright />
+              <MadeBy />
+            </>
+            )
+          : (
+            <>
+              <SocialAndCopyright />
+              <FooterLogo />
+              <Address color='#707070' />
+            </>
+            )}
       </FooterMainContainer>
     </Box>
   )

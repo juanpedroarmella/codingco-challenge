@@ -1,5 +1,5 @@
+// Importar componentes y hooks necesarios
 import MobileDrawer from '@/components/atoms/MobileDrawer'
-import { useScroll } from '@/hooks/useScroll'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 import { useCallback, useEffect, useState } from 'react'
@@ -28,11 +28,24 @@ const BarContainer = styled(Box)(() => {
 const MobileHeader: React.FC = (): JSX.Element => {
   const [open, setOpen] = useState<boolean>(false)
 
-  const scrolled = useScroll()
-
   useEffect(() => {
-    if (scrolled) setOpen(false)
-  }, [scrolled])
+    const handleScroll = (): void => {
+      const { scrollY, innerHeight, document } = window
+      const scrollBottom = scrollY + innerHeight
+      const isAtTop = scrollY <= 0
+      const isAtBottom = scrollBottom >= document.documentElement.scrollHeight
+
+      if (!isAtTop && !isAtBottom) {
+        setOpen(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [open])
 
   const handleClick = useCallback(() => {
     setOpen(!open)

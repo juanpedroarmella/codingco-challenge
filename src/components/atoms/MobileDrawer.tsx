@@ -6,6 +6,7 @@ interface DrawerProps {
 }
 
 const Drawer = styled(Box)<DrawerProps>(({ open }) => {
+  const vhRelativeToScroll = (window.scrollY / window.innerHeight) * 100
   return {
     background: '#E9E6E1',
     position: 'absolute',
@@ -15,7 +16,9 @@ const Drawer = styled(Box)<DrawerProps>(({ open }) => {
     padding: '0 !important',
     margin: 0,
     zIndex: 0,
-    transform: open ? 'translateY(0)' : 'translateY(-250vw)',
+    transform: open
+      ? `translateY(${vhRelativeToScroll}vh)`
+      : 'translateY(-100%)',
     transition: 'transform 0.3s'
   }
 })
