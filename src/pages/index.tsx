@@ -1,10 +1,9 @@
-import { Box } from '@mui/material'
-import Typography from '@mui/material/Typography'
+import Hero from '@/components/hero/Hero'
 
 export default function Home (): JSX.Element {
   return (
-    <Box>
-      <Typography>test</Typography>
-    </Box>
+    <>
+      <Hero />
+    </>
   )
 }

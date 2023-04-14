@@ -20,11 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <MainLayout
-        component='main'
-        data-testid='main-layout'
-        sx={{ minHeight: '150vh' }}
-      >
+      <MainLayout component='main' data-testid='main-layout'>
         {children}
       </MainLayout>
       <Footer />
