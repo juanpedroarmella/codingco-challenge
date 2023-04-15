@@ -20,19 +20,20 @@ const StyledLogoContainer = styled(Box)(({ theme }) => {
     margin: 0,
     height: '251px',
     [theme.breakpoints.down('sm')]: {
-      height: '150px'
+      height: '150px',
+      left: 0,
+      width: '100%'
     }
   }
 })
 
-export default function HeroLogo (): JSX.Element {
+export default function HeroLogo(): JSX.Element {
   return (
     <StyledLogoContainer component='h1'>
       <StyledHeroLogo
         version='1.1'
         xmlns='http://www.w3.org/2000/svg'
-        viewBox='0 0 506 254.5'
-      >
+        viewBox='0 0 506 254.5'>
         <g transform='translate(25 19.048)'>
           <g transform='translate(69.811 70.441) rotate(90)'>
             <path d='M141.4-386.1v69.8h-14.9v-0.4l8.6-3.6v-61.7l-8.6-3.6v-0.4H141.4z' />

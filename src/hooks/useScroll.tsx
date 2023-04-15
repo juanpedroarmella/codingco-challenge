@@ -7,7 +7,7 @@ export const useScroll = (initialState = false): boolean => {
     const handleScroll = (): void => {
       const offset = window.pageYOffset
 
-      if (offset > 300) {
+      if (offset > 200) {
         setScrolled(true)
       } else {
         setScrolled(false)

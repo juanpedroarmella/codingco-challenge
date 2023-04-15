@@ -5,10 +5,7 @@ import Header from './header/Header'
 
 const MainLayout = styled(Box)(() => {
   return {
-    minHeight: '100vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
+    minHeight: '100vh'
   }
 })
 

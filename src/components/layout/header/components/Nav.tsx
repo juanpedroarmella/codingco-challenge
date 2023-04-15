@@ -9,7 +9,6 @@ const NavContainer = styled(Box)(({ theme }) => {
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
-    zIndex: 1,
     margin: '0 2vw',
     padding: '0 0.75rem',
     [theme.breakpoints.up('xs')]: {

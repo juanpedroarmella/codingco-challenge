@@ -12,10 +12,6 @@ const BgContainer = styled(Box)(({ theme }) => {
 
 const MainContainer = styled(Box)(({ theme }) => {
   return {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
     [theme.breakpoints.up('xs')]: {
       maxWidth: theme.breakpoints.values.xs
     },
@@ -44,19 +40,30 @@ const BorderedSpan = styled(Box)(({ theme }) => {
   }
 })
 
-export default function Hero (): JSX.Element {
+const ItemsContainer = styled(Box)(({ theme }) => {
+  return {
+    position: 'absolute',
+    top: '30.8%',
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      top: '22.4%'
+    }
+  }
+})
+
+export default function Hero(): JSX.Element {
   const theme = useTheme()
   return (
     <BgContainer>
       <MainContainer>
-        <Box width='100%' position='absolute' top='24%' left='0'>
+        <ItemsContainer>
           <BorderedSpan />
           <BorderedSpan />
           <BorderedSpan
             borderBottom={`1px solid ${theme.palette.text.primary}`}
           />
           <HeroLogo />
-        </Box>
+        </ItemsContainer>
       </MainContainer>
     </BgContainer>
   )
