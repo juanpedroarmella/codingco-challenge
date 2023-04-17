@@ -51,7 +51,7 @@ const ItemsContainer = styled(Box)(({ theme }) => {
   }
 })
 
-export default function Hero(): JSX.Element {
+export default function Hero (): JSX.Element {
   const theme = useTheme()
   return (
     <BgContainer>

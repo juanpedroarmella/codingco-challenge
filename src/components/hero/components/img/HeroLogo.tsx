@@ -6,6 +6,12 @@ const StyledHeroLogo = styled('svg')(({ theme }) => {
     width: '500px',
     [theme.breakpoints.down('sm')]: {
       width: '300px'
+    },
+    '& .arrow path, & .brother path,& .circle path  ': {
+      fill: theme.palette.text.primary
+    },
+    '& .madrid path,& .circle circle ': {
+      stroke: theme.palette.text.primary
     }
   }
 })
@@ -34,7 +40,7 @@ export default function HeroLogo(): JSX.Element {
         version='1.1'
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 506 254.5'>
-        <g transform='translate(25 19.048)'>
+        <g transform='translate(25 19.048)' className='arrow'>
           <g transform='translate(69.811 70.441) rotate(90)'>
             <path d='M141.4-386.1v69.8h-14.9v-0.4l8.6-3.6v-61.7l-8.6-3.6v-0.4H141.4z' />
           </g>
@@ -45,7 +51,7 @@ export default function HeroLogo(): JSX.Element {
             />
           </g>
         </g>
-        <g transform='translate(8 21.071)'>
+        <g transform='translate(8 21.071)' className='brother'>
           <path
             d='M100.9,2.8H70.3C70.1,2.8,70,2.9,70,3c0,0,0,0,0,0V4c0,0.1,0.1,0.2,0.2,0.2l8.5,1.9v75.2
         l-8.5,1.9c-0.1,0-0.2,0.1-0.2,0.2v0.9c0,0.1,0.1,0.3,0.3,0.3c0,0,0,0,0,0h30.7c0.1,0,0.3-0.1,0.3-0.3c0,0,0,0,0,0V3
@@ -114,8 +120,8 @@ export default function HeroLogo(): JSX.Element {
         c0.1,0,0.3-0.1,0.3-0.3c0,0,0,0,0,0v-0.7C456.8,83.7,456.7,83.6,456.6,83.5z'
           />
         </g>
-        <g transform='translate(0 30.227)'>
-          <g fill='none' stroke='#000000' stroke-width='4'>
+        <g transform='translate(0 30.227)' className='circle'>
+          <g fill='none' stroke='#000000' stroke-width='2'>
             <circle cx='33' cy='33' r='33' stroke='none' />
             <circle cx='33' cy='33' r='32' fill='none' />
           </g>
@@ -127,7 +133,11 @@ export default function HeroLogo(): JSX.Element {
             />
           </g>
         </g>
-        <g transform='translate(31 20.124)' fill='transparent' stroke='#656565'>
+        <g
+          transform='translate(31 20.124)'
+          fill='transparent'
+          stroke='#656565'
+          className='madrid'>
           <path
             d='M0,213c2.7-8.4,4.1-15.5,4.1-21.3v-46.2c0-4.2-1.1-9.5-3.3-15.8v-0.3h13.8l28.1,72.8
       L71,129.2h12.3v0.4c-1.3,5.2-2.1,10.5-2.2,15.8v51.9c0.2,5.3,0.9,10.6,2.2,15.8v0.4H68.8v-0.4c1.3-5.2,2.1-10.5,2.2-15.8v-56
