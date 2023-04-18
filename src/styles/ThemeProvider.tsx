@@ -1,24 +1,55 @@
-import { ThemeProvider } from '@mui/material/styles'
-import { useState, useEffect } from 'react'
-import { lightTheme, darkTheme, orangeTheme, yellowTheme } from './Themes'
+import { createContext, useContext, useEffect, useState } from 'react'
+import { light, dark, orange, yellow } from './Themes'
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 
-const themes = [lightTheme, darkTheme, orangeTheme, yellowTheme]
+enum ThemeNames {
+  LIGHT = 'light',
+  DARK = 'dark',
+  ORANGE = 'orange',
+  YELLOW = 'yellow'
+}
 
-interface ThemeSwitcherProps {
+interface ThemeContextProps {
+  name: ThemeNames
+}
+
+const ThemeContext = createContext<ThemeContextProps>({
+  name: ThemeNames.LIGHT
+})
+
+export const useThemeContext = (): ThemeContextProps => useContext(ThemeContext)
+
+const themes = {
+  [ThemeNames.LIGHT]: light,
+  [ThemeNames.DARK]: dark,
+  [ThemeNames.ORANGE]: orange,
+  [ThemeNames.YELLOW]: yellow
+}
+
+interface ThemeProviderProps {
   children: React.ReactNode
 }
 
-const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ children }) => {
-  const [currentThemeIndex, setCurrentThemeIndex] = useState(0)
+const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+  const [currentThemeName, setCurrentThemeName] = useState<ThemeNames>(
+    ThemeNames.LIGHT
+  )
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * themes.length)
-    setCurrentThemeIndex(randomIndex)
+    const randomIndex = Math.floor(
+      Math.random() * Object.keys(ThemeNames).length
+    )
+    const randomThemeName = Object.values(ThemeNames)[randomIndex] as ThemeNames
+    setCurrentThemeName(randomThemeName)
   }, [])
 
-  const currentTheme = themes[currentThemeIndex]
+  const currentTheme = themes[currentThemeName]
 
-  return <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
+  return (
+    <ThemeContext.Provider value={{ name: currentThemeName }}>
+      <MuiThemeProvider theme={currentTheme}>{children}</MuiThemeProvider>
+    </ThemeContext.Provider>
+  )
 }
 
-export default ThemeSwitcher
+export default ThemeProvider

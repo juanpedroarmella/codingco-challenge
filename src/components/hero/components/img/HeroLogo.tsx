@@ -33,13 +33,14 @@ const StyledLogoContainer = styled(Box)(({ theme }) => {
   }
 })
 
-export default function HeroLogo(): JSX.Element {
+export default function HeroLogo (): JSX.Element {
   return (
     <StyledLogoContainer component='h1'>
       <StyledHeroLogo
         version='1.1'
         xmlns='http://www.w3.org/2000/svg'
-        viewBox='0 0 506 254.5'>
+        viewBox='0 0 506 254.5'
+      >
         <g transform='translate(25 19.048)' className='arrow'>
           <g transform='translate(69.811 70.441) rotate(90)'>
             <path d='M141.4-386.1v69.8h-14.9v-0.4l8.6-3.6v-61.7l-8.6-3.6v-0.4H141.4z' />
@@ -121,7 +122,7 @@ export default function HeroLogo(): JSX.Element {
           />
         </g>
         <g transform='translate(0 30.227)' className='circle'>
-          <g fill='none' stroke='#000000' stroke-width='2'>
+          <g fill='none' stroke='#000000' strokeWidth='3'>
             <circle cx='33' cy='33' r='33' stroke='none' />
             <circle cx='33' cy='33' r='32' fill='none' />
           </g>
@@ -137,7 +138,9 @@ export default function HeroLogo(): JSX.Element {
           transform='translate(31 20.124)'
           fill='transparent'
           stroke='#656565'
-          className='madrid'>
+          strokeWidth='0.6'
+          className='madrid'
+        >
           <path
             d='M0,213c2.7-8.4,4.1-15.5,4.1-21.3v-46.2c0-4.2-1.1-9.5-3.3-15.8v-0.3h13.8l28.1,72.8
       L71,129.2h12.3v0.4c-1.3,5.2-2.1,10.5-2.2,15.8v51.9c0.2,5.3,0.9,10.6,2.2,15.8v0.4H68.8v-0.4c1.3-5.2,2.1-10.5,2.2-15.8v-56
@@ -153,7 +156,6 @@ export default function HeroLogo(): JSX.Element {
       C101.4,188.1,99.5,191.6,99.5,196.3L99.5,196.3z'
           />
           <path
-            id='Trazado_12139'
             d='M152.4,162.9c4.4-5.1,10.8-8,17.6-8c6.4-0.2,12.5,2.8,16.3,8v-18.7
       c0.1-5.3-0.9-10.5-2.9-15.3v-0.4l12.6-2v70.8c0.2,5.3,0.9,10.6,2.2,15.8v0.4h-9.2c-0.2-0.5-0.5-1.9-1.1-3.9
       c-0.5-1.7-0.9-3.5-1.2-5.3c-4.6,6.7-10.7,10.1-18.3,10.1c-6.4,0.1-12.6-2.7-16.6-7.7c-4.4-5.1-6.6-12.2-6.6-21.3

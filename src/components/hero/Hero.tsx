@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import { styled, useTheme } from '@mui/material/styles'
 import HeroLogo from './components/img/HeroLogo'
+import SpanSubtitle from './components/SpanSubtitle'
 
 const BgContainer = styled(Box)(({ theme }) => {
   return {
@@ -63,6 +64,7 @@ export default function Hero (): JSX.Element {
             borderBottom={`1px solid ${theme.palette.text.primary}`}
           />
           <HeroLogo />
+          <SpanSubtitle />
         </ItemsContainer>
       </MainContainer>
     </BgContainer>

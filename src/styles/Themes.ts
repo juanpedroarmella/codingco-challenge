@@ -22,7 +22,7 @@ const fonts = {
   typography: { fontFamily: "'Work Sans', sans-serif" }
 }
 
-function createCustomTheme(
+function createCustomTheme (
   backgroundDefault: string,
   textPrimary: string
 ): Theme {
@@ -41,9 +41,9 @@ function createCustomTheme(
   })
 }
 
-const darkTheme = createCustomTheme('#000000', '#E9E6E1')
-const lightTheme = createCustomTheme('#E9E6E1', '#000000')
-const orangeTheme = createCustomTheme('#E6511B', '#FFFFFF')
-const yellowTheme = createCustomTheme('#E1DF3C', '#000000')
+const dark = createCustomTheme('#000000', '#E9E6E1')
+const light = createCustomTheme('#E9E6E1', '#000000')
+const orange = createCustomTheme('#E6511B', '#FFFFFF')
+const yellow = createCustomTheme('#E1DF3C', '#000000')
 
-export { darkTheme, lightTheme, orangeTheme, yellowTheme }
+export { dark, light, orange, yellow }
