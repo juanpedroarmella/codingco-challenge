@@ -14,7 +14,7 @@ const Drawer = styled(Box)<DrawerProps>(({ open }) => {
     width: '100%',
     padding: '0',
     margin: 0,
-    zIndex: 1,
+    zIndex: 2,
     transform: open ? 'translateY(0)' : 'translateY(-100%)',
     transition: 'transform 0.3s'
   }

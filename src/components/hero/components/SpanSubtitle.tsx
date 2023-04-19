@@ -9,7 +9,8 @@ const StyledSpan = styled(Box)(({ theme }) => {
     fontWeight: 'bold',
     fontSize: '20px',
     textAlign: 'center',
-    color: theme.palette.text.primary
+    color: theme.palette.text.primary,
+    zIndex: 1
   }
 })
 
@@ -18,15 +19,9 @@ const MainContainer = styled(Box)(({ theme }) => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
-    width: '55%',
-    left: '14%',
-    top: '67%',
     height: '125px',
-    zIndex: 1,
     [theme.breakpoints.down('sm')]: {
-      left: '22.5%',
-      top: '55%'
+      height: '75px'
     }
   }
 })
@@ -47,9 +42,7 @@ const Hex = styled('svg')(() => {
   return {
     position: 'absolute',
     width: '54px',
-    heigh: '54px',
-    top: '-25%',
-    zIndex: -1,
+    height: '54px',
     '& path': {
       stroke: strokeColor
     }

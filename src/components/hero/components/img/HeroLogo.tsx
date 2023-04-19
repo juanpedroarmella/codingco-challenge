@@ -19,16 +19,10 @@ const StyledHeroLogo = styled('svg')(({ theme }) => {
 const StyledLogoContainer = styled(Box)(({ theme }) => {
   return {
     textAlign: 'center',
-    position: 'absolute',
-    top: 0,
-    left: '14%',
-    width: '55%',
     margin: 0,
     height: '251px',
     [theme.breakpoints.down('sm')]: {
-      height: '150px',
-      left: 0,
-      width: '100%'
+      height: '150px'
     }
   }
 })
