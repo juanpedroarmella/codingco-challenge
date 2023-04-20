@@ -6,24 +6,24 @@ import { useMemo } from 'react'
 
 interface HexProps {
   theme?: Theme
-  themeName: string
+  themename: string
 }
 
-const Hex = styled('svg')<HexProps>(({ themeName, theme }) => {
+const Hex = styled('svg')<HexProps>(({ themename, theme }) => {
   const strokeColor = useMemo(() => {
-    if (themeName === 'dark') {
+    if (themename === 'dark') {
       return '#E6511B'
     }
-    if (themeName === 'light') {
+    if (themename === 'light') {
       return '#FF1F57'
     }
-    if (themeName === 'yellow') {
+    if (themename === 'yellow') {
       return '#000000'
     }
-    if (themeName === 'orange') {
+    if (themename === 'orange') {
       return '#37A87E'
     }
-  }, [themeName])
+  }, [themename])
   return {
     position: 'relative',
     width: '147px',
@@ -40,21 +40,21 @@ const Hex = styled('svg')<HexProps>(({ themeName, theme }) => {
 
 interface TextProps {
   theme?: Theme
-  themeName: string
+  themename: string
 }
 
-const Text = styled(Typography)<TextProps>(({ theme, themeName }) => {
+const Text = styled(Typography)<TextProps>(({ theme, themename }) => {
   const letterColor = useMemo(() => {
-    if (themeName === 'dark') {
+    if (themename === 'dark') {
       return '#E6511B'
     }
-    if (themeName === 'light' || themeName === 'yellow') {
+    if (themename === 'light' || themename === 'yellow') {
       return '#000000'
     }
-    if (themeName === 'orange') {
+    if (themename === 'orange') {
       return '#FFFFFF'
     }
-  }, [themeName])
+  }, [themename])
   return {
     fontFamily: 'Work Sans',
     fontWeight: 'bold',
@@ -71,12 +71,12 @@ const Text = styled(Typography)<TextProps>(({ theme, themeName }) => {
 })
 
 export default function LastPlaces (): JSX.Element {
-  const { name: themeName } = useThemeContext()
+  const { name: themename } = useThemeContext()
   return (
     <Box data-test-id='last-places' maxHeight='125px'>
-      <Text themeName={themeName}>Últimos lugares</Text>
+      <Text themename={themename}>Últimos lugares</Text>
       <Hex
-        themeName={themeName}
+        themename={themename}
         xmlns='http://www.w3.org/2000/svg'
         width='156.064'
         height='180.206'
