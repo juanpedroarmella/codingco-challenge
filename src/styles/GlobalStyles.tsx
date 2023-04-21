@@ -6,6 +6,7 @@ const GlobalCustomStyle = (): JSX.Element => (
     styles={{
       fonts,
       body: {
+        overflowX: 'hidden',
         margin: 0,
         padding: 0,
         scrollBehavior: 'smooth',

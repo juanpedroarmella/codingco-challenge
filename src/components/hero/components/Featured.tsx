@@ -10,7 +10,8 @@ const Container = styled(Box)(({ theme }) => {
     flexDirection: 'column',
     zIndex: 1,
     [theme.breakpoints.down('sm')]: {
-      width: '100%'
+      width: '100%',
+      marginTop: '2rem'
     }
   }
 })

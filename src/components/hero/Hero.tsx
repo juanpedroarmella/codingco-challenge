@@ -31,6 +31,9 @@ const Main = styled(Box)(({ theme }) => {
     },
     [theme.breakpoints.up('xl')]: {
       maxWidth: theme.breakpoints.values.xl
+    },
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '100vh'
     }
   }
 })
