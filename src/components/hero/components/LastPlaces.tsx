@@ -28,7 +28,7 @@ const Hex = styled('svg')<HexProps>(({ themename, theme }) => {
     position: 'relative',
     width: '147px',
     height: '170px',
-    top: '-130px',
+    top: '-90px',
     left: '10px',
     zIndex: 0,
     '& path': {
@@ -70,7 +70,7 @@ const Text = styled(Typography)<TextProps>(({ theme, themename }) => {
     textAlign: 'center',
     position: 'relative',
     lineHeight: '23px',
-    top: '-21px',
+    top: '22px',
     left: '12px',
     zIndex: 1,
     [theme.breakpoints.down('sm')]: {
@@ -115,7 +115,7 @@ const Dots = styled('svg')(({ theme }) => {
 
 const Container = styled(Box)(({ theme }) => {
   return {
-    maxHeight: '125px',
+    maxHeight: '166px',
     [theme.breakpoints.down('sm')]: {
       overflow: 'hidden'
     }

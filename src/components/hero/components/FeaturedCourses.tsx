@@ -44,7 +44,7 @@ const Dots = styled('svg')(({ theme }) => {
   }
 })
 
-export default function FeaturedCourses(): JSX.Element {
+export default function FeaturedCourses (): JSX.Element {
   const theme = useTheme()
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   return (
@@ -53,19 +53,22 @@ export default function FeaturedCourses(): JSX.Element {
         title='Curso Anual de Creatividad'
         paragraphs={['Hay plazas disponibles.', '¡Apúntate!']}
       />
-      {isSm ? null : (
-        <FeaturedCourse
-          title='Planificacion y Estrategia Creativa'
-          paragraphs={['Quedan pocas plazas.', ' ¡No te quedes fuera!']}
-        />
-      )}
+      {isSm
+        ? null
+        : (
+          <FeaturedCourse
+            title='Planificacion y Estrategia Creativa'
+            paragraphs={['Quedan pocas plazas.', ' ¡No te quedes fuera!']}
+          />
+          )}
 
       <Dots
         xmlns='http://www.w3.org/2000/svg'
         width='4'
         height='253.5'
         viewBox='0 0 4 253.5'
-        preserveAspectRatio='none'>
+        preserveAspectRatio='none'
+      >
         <g transform='translate(-1149 -308.5)'>
           <path
             d='M-10733.833,9988.96v86.475'
