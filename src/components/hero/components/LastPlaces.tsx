@@ -117,23 +117,23 @@ const Container = styled(Box)(({ theme }) => {
   return {
     maxHeight: '166px',
     [theme.breakpoints.down('sm')]: {
-      overflow: 'hidden'
+      overflow: 'hidden',
+      maxHeight: '125px'
     }
   }
 })
 
-export default function LastPlaces (): JSX.Element {
+export default function LastPlaces(): JSX.Element {
   const { name: themename } = useThemeContext()
   return (
-    <Container data-test-id='last-places' maxHeight='125px'>
+    <Container data-test-id='last-places'>
       <Text themename={themename}>Últimos lugares</Text>
       <Hex
         themename={themename}
         xmlns='http://www.w3.org/2000/svg'
         width='156.064'
         height='180.206'
-        viewBox='0 0 156.064 180.206'
-      >
+        viewBox='0 0 156.064 180.206'>
         <path
           d='M127.361,0H42.454L0,73.532l42.454,73.532h84.907l42.454-73.532Z'
           transform='translate(4.5 175.01) rotate(-90)'
@@ -147,8 +147,7 @@ export default function LastPlaces (): JSX.Element {
         width='4'
         height='253.5'
         viewBox='0 0 4 253.5'
-        preserveAspectRatio='none'
-      >
+        preserveAspectRatio='none'>
         <g transform='translate(-1149 -308.5)'>
           <path
             d='M-10733.833,9988.96v86.475'

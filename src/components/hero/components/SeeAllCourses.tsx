@@ -5,11 +5,14 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { useMemo } from 'react'
 
-const StyledLink = styled(Link)(() => {
+const StyledLink = styled(Link)(({ theme }) => {
   return {
     position: 'relative',
     overflow: 'hidden',
-    padding: '20px 0'
+    padding: '20px 0',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
   }
 })
 
@@ -53,7 +56,7 @@ const StyledTypography = styled(Typography)(({ delay }: { delay: number }) => {
   }
 })
 
-export default function SeAllCourses (): JSX.Element {
+export default function SeAllCourses(): JSX.Element {
   const text = '//Ver todos los cursos'
   return (
     <StyledLink href='#' underline='none' color='inherit'>

@@ -12,12 +12,12 @@ const Container = styled(Box)(({ theme }) => {
     zIndex: 1,
     [theme.breakpoints.down('sm')]: {
       width: '100%',
-      marginTop: '2rem'
+      marginTop: '1.5rem'
     }
   }
 })
 
-export default function Featured (): JSX.Element {
+export default function Featured(): JSX.Element {
   return (
     <Container component='aside'>
       <LastPlaces />
