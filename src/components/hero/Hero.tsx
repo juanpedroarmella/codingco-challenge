@@ -1,5 +1,7 @@
+import { useThemeContext } from '@/styles/ThemeProvider'
 import Box from '@mui/material/Box'
-import { styled, useTheme } from '@mui/material/styles'
+import { styled, Theme } from '@mui/material/styles'
+import { useMemo } from 'react'
 import Featured from './components/Featured'
 import HeroLogo from './components/img/HeroLogo'
 import SpanSubtitle from './components/SpanSubtitle'
@@ -38,9 +40,20 @@ const Main = styled(Box)(({ theme }) => {
   }
 })
 
-const LineSpan = styled(Box)(({ theme }) => {
+interface LineSpanProps {
+  theme?: Theme
+  withbottom?: string
+}
+
+const LineSpan = styled(Box)<LineSpanProps>(({ theme, withbottom }) => {
+  const { name: themeName } = useThemeContext()
+  const borderColor = useMemo(
+    () => (themeName === 'dark' ? '#FFFFFF77' : theme.palette.text.primary),
+    [theme.palette.text.primary, themeName]
+  )
   return {
-    borderTop: `1px solid ${theme.palette.text.primary}`,
+    borderTop: `1px solid ${borderColor}`,
+    borderBottom: withbottom === 'true' ? `1px solid ${borderColor}` : 'none',
     height: '125px',
     [theme.breakpoints.down('sm')]: {
       height: '75px'
@@ -55,7 +68,7 @@ const Lines = styled(Box)(({ theme }) => {
     transform: 'translateY(-50%)',
     width: '100%',
     [theme.breakpoints.down('sm')]: {
-      top: '40%',
+      top: '38%',
       transform: 'translateY(-40%)'
     },
     zIndex: 0
@@ -72,7 +85,7 @@ const Text = styled(Box)(({ theme }) => {
     [theme.breakpoints.down('sm')]: {
       height: '225px',
       position: 'absolute',
-      top: '40%',
+      top: '38%',
       transform: 'translateY(-40%)'
     }
   }
@@ -87,14 +100,13 @@ const Slogan = styled(Box)(({ theme }) => {
   }
 })
 
-export default function Hero (): JSX.Element {
-  const theme = useTheme()
+export default function Hero(): JSX.Element {
   return (
     <Bg component='section' data-testid='hero'>
       <Lines data-testid='lines'>
         <LineSpan />
         <LineSpan />
-        <LineSpan borderBottom={`1px solid ${theme.palette.text.primary}`} />
+        <LineSpan withbottom='true' />
       </Lines>
       <Main data-testid='content-limiter'>
         <Text data-testid='content'>

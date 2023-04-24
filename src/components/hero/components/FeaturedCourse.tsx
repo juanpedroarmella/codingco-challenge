@@ -55,7 +55,9 @@ const Container = styled(Box)<ContainerProps>(({ theme }) => {
       }
     },
     [theme.breakpoints.down('sm')]: {
-      width: '100vw'
+      width: '100vw',
+      padding: '1rem 2rem 0 2rem',
+      margin: 0
     }
   }
 })
@@ -73,7 +75,7 @@ interface Props {
   paragraphs: string[]
 }
 
-export default function FeaturedCourse({
+export default function FeaturedCourse ({
   title,
   paragraphs
 }: Props): JSX.Element {
@@ -81,6 +83,7 @@ export default function FeaturedCourse({
   const betweenMobileAndTablet = useMediaQuery(
     theme.breakpoints.between('sm', 'lg')
   )
+  const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   return (
     <Container component='li'>
       <Link
@@ -89,26 +92,30 @@ export default function FeaturedCourse({
         color='inherit'
         display={betweenMobileAndTablet ? 'flex' : 'inline'}
         alignItems='center'
-        height='100%'>
+        height='100%'
+      >
         <Box
           display='flex'
           alignItems={betweenMobileAndTablet ? 'flex-start' : 'center'}
           justifyContent='space-between'
           gap={1}
-          flexDirection={betweenMobileAndTablet ? 'column' : 'row'}>
+          flexDirection={betweenMobileAndTablet ? 'column' : 'row'}
+        >
           <Typography
             variant='h6'
             fontWeight='bold'
             fontSize='20px'
             lineHeight='25px'
-            width={betweenMobileAndTablet ? '100%' : '80%'}>
+            width={betweenMobileAndTablet ? '100%' : '80%'}
+          >
             {title}
           </Typography>
           <Arrow
             xmlns='http://www.w3.org/2000/svg'
             width='15'
             height='19.467'
-            viewBox='0 0 15 19.467'>
+            viewBox='0 0 15 19.467'
+          >
             <g transform='translate(61.143 -16.142) rotate(90)'>
               <g transform='translate(16.142 48)'>
                 <g>
@@ -126,13 +133,15 @@ export default function FeaturedCourse({
         {betweenMobileAndTablet
           ? null
           : paragraphs.map((text: string, index: number) => (
-              <Typography
-                variant='body1'
-                fontSize='16px'
-                key={`${text}-${index}`}>
-                {text}
-              </Typography>
-            ))}
+            <Typography
+              variant='body1'
+              fontSize='16px'
+              key={`${text}-${index}`}
+              display={isSm ? 'inline' : 'block'}
+            >
+              {text}
+            </Typography>
+          ))}
       </Link>
     </Container>
   )
