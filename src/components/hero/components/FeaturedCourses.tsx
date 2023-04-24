@@ -44,31 +44,56 @@ const Dots = styled('svg')(({ theme }) => {
   }
 })
 
-export default function FeaturedCourses (): JSX.Element {
+export default function FeaturedCourses(): JSX.Element {
   const theme = useTheme()
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   return (
     <Container data-test-id='featured-courses' component='ul'>
-      <FeaturedCourse
-        title='Curso Anual de Creatividad'
-        paragraphs={['Hay plazas disponibles.', '¡Apúntate!']}
-      />
-      {isSm
-        ? null
-        : (
+      {isSm ? (
+        <Box
+          display='flex'
+          width='max-content'
+          alignItems='cente'
+          justifyContent='center'
+          sx={{
+            '@keyframes slide': {
+              '0%': {
+                transform: 'translateX(0%)'
+              },
+              '100%': {
+                transform: 'translateX(-100%)'
+              }
+            },
+            animation: 'slide 10s infinite'
+          }}>
+          <FeaturedCourse
+            title='Curso Anual de Creatividad'
+            paragraphs={['Hay plazas disponibles.', '¡Apúntate!']}
+          />
+          <FeaturedCourse
+            title='Curso Anual de Creatividad'
+            paragraphs={['Hay plazas disponibles.', '¡Apúntate!']}
+          />
+        </Box>
+      ) : (
+        <>
+          <FeaturedCourse
+            title='Curso Anual de Creatividad'
+            paragraphs={['Hay plazas disponibles.', '¡Apúntate!']}
+          />
           <FeaturedCourse
             title='Planificacion y Estrategia Creativa'
             paragraphs={['Quedan pocas plazas.', ' ¡No te quedes fuera!']}
           />
-          )}
+        </>
+      )}
 
       <Dots
         xmlns='http://www.w3.org/2000/svg'
         width='4'
         height='253.5'
         viewBox='0 0 4 253.5'
-        preserveAspectRatio='none'
-      >
+        preserveAspectRatio='none'>
         <g transform='translate(-1149 -308.5)'>
           <path
             d='M-10733.833,9988.96v86.475'

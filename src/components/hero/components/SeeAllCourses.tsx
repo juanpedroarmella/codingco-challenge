@@ -56,7 +56,7 @@ const StyledTypography = styled(Typography)(({ delay }: { delay: number }) => {
   }
 })
 
-export default function SeAllCourses(): JSX.Element {
+export default function SeAllCourses (): JSX.Element {
   const text = '//Ver todos los cursos'
   return (
     <StyledLink href='#' underline='none' color='inherit'>

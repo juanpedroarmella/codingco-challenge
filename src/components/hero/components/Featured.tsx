@@ -17,7 +17,7 @@ const Container = styled(Box)(({ theme }) => {
   }
 })
 
-export default function Featured(): JSX.Element {
+export default function Featured (): JSX.Element {
   return (
     <Container component='aside'>
       <LastPlaces />

@@ -1,17 +1,16 @@
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import { styled, useTheme } from '@mui/material/styles'
+import { styled, Theme, useTheme } from '@mui/material/styles'
 import Link from '@mui/material/Link'
 import { useMemo } from 'react'
 import { useThemeContext } from '@/styles/ThemeProvider'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-interface Props {
-  title: string
-  paragraphs: string[]
+interface ContainerProps {
+  theme?: Theme
 }
 
-const Container = styled(Box)(({ theme }) => {
+const Container = styled(Box)<ContainerProps>(({ theme }) => {
   const { name: themename } = useThemeContext()
   const bgOnHover = useMemo(() => {
     if (
@@ -54,6 +53,9 @@ const Container = styled(Box)(({ theme }) => {
         fill: '#000000',
         transition: '0.3s'
       }
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '100vw'
     }
   }
 })
@@ -66,7 +68,12 @@ const Arrow = styled('svg')(({ theme }) => {
   }
 })
 
-export default function FeaturedCourse ({
+interface Props {
+  title: string
+  paragraphs: string[]
+}
+
+export default function FeaturedCourse({
   title,
   paragraphs
 }: Props): JSX.Element {
@@ -82,30 +89,26 @@ export default function FeaturedCourse ({
         color='inherit'
         display={betweenMobileAndTablet ? 'flex' : 'inline'}
         alignItems='center'
-        height='100%'
-      >
+        height='100%'>
         <Box
           display='flex'
           alignItems={betweenMobileAndTablet ? 'flex-start' : 'center'}
           justifyContent='space-between'
           gap={1}
-          flexDirection={betweenMobileAndTablet ? 'column' : 'row'}
-        >
+          flexDirection={betweenMobileAndTablet ? 'column' : 'row'}>
           <Typography
             variant='h6'
             fontWeight='bold'
             fontSize='20px'
             lineHeight='25px'
-            width={betweenMobileAndTablet ? '100%' : '80%'}
-          >
+            width={betweenMobileAndTablet ? '100%' : '80%'}>
             {title}
           </Typography>
           <Arrow
             xmlns='http://www.w3.org/2000/svg'
             width='15'
             height='19.467'
-            viewBox='0 0 15 19.467'
-          >
+            viewBox='0 0 15 19.467'>
             <g transform='translate(61.143 -16.142) rotate(90)'>
               <g transform='translate(16.142 48)'>
                 <g>
@@ -123,14 +126,13 @@ export default function FeaturedCourse ({
         {betweenMobileAndTablet
           ? null
           : paragraphs.map((text: string, index: number) => (
-            <Typography
-              variant='body1'
-              fontSize='16px'
-              key={`${text}-${index}`}
-            >
-              {text}
-            </Typography>
-          ))}
+              <Typography
+                variant='body1'
+                fontSize='16px'
+                key={`${text}-${index}`}>
+                {text}
+              </Typography>
+            ))}
       </Link>
     </Container>
   )
