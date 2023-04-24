@@ -4,6 +4,7 @@ import { styled, Theme } from '@mui/material/styles'
 import { useMemo } from 'react'
 import Featured from './components/Featured'
 import HeroLogo from './components/img/HeroLogo'
+import ScrollArrow from './components/img/ScrollArrow'
 import SpanSubtitle from './components/SpanSubtitle'
 
 const Bg = styled(Box)(({ theme }) => {
@@ -18,7 +19,7 @@ const Main = styled(Box)(({ theme }) => {
     justifyContent: 'center',
     alignItems: 'center',
     margin: 'auto',
-    minHeight: '100vh',
+    height: '100vh',
     [theme.breakpoints.up('xs')]: {
       maxWidth: theme.breakpoints.values.xs
     },
@@ -33,9 +34,6 @@ const Main = styled(Box)(({ theme }) => {
     },
     [theme.breakpoints.up('xl')]: {
       maxWidth: theme.breakpoints.values.xl
-    },
-    [theme.breakpoints.down('sm')]: {
-      minHeight: '100vh'
     }
   }
 })
@@ -93,6 +91,7 @@ const Text = styled(Box)(({ theme }) => {
 
 const Slogan = styled(Box)(({ theme }) => {
   return {
+    position: 'relative',
     width: '75%',
     [theme.breakpoints.down('sm')]: {
       width: '100%'
@@ -100,7 +99,7 @@ const Slogan = styled(Box)(({ theme }) => {
   }
 })
 
-export default function Hero(): JSX.Element {
+export default function Hero (): JSX.Element {
   return (
     <Bg component='section' data-testid='hero'>
       <Lines data-testid='lines'>
@@ -113,6 +112,7 @@ export default function Hero(): JSX.Element {
           <Slogan data-testid='slogan'>
             <HeroLogo data-testid='logo' />
             <SpanSubtitle data-testid='subtitle' />
+            <ScrollArrow />
           </Slogan>
           <Featured />
         </Text>
