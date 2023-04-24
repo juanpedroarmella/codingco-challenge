@@ -26,6 +26,7 @@ const ScrollButton = styled('button')(({ theme }) => {
     cursor: 'pointer',
     background: 'transparent',
     border: 'none',
+    zIndex: 2,
     [theme.breakpoints.down('sm')]: {
       bottom: '-85px',
       left: '46%'
@@ -33,7 +34,7 @@ const ScrollButton = styled('button')(({ theme }) => {
   }
 })
 
-export default function ScrollArrow(): JSX.Element {
+export default function ScrollArrow (): JSX.Element {
   const handleScroll = (): void => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
   }
@@ -44,7 +45,8 @@ export default function ScrollArrow(): JSX.Element {
         xmlns='http://www.w3.org/2000/svg'
         width='24.128'
         height='43.775'
-        viewBox='0 0 24.128 43.775'>
+        viewBox='0 0 24.128 43.775'
+      >
         <g transform='translate(1339.614 1839.067)'>
           <path
             d='M-1315.806-1816.987l.32.128-11.968,21.567h-.192l-11.968-21.567.32-.128,11.072,14.847v-36.927h1.216v37.056Z'
