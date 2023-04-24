@@ -1,5 +1,8 @@
 import GlobalStyles from '@mui/material/GlobalStyles'
 import fonts from './fonts.module.css'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 const GlobalCustomStyle = (): JSX.Element => (
   <GlobalStyles
