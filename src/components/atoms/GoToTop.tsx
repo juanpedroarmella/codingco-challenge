@@ -34,7 +34,7 @@ const ArrowUp = styled(FontAwesomeIcon)(() => {
   }
 })
 
-export default function GoToTop(): JSX.Element {
+export default function GoToTop (): JSX.Element {
   const [showButton, setShowButton] = useState(false)
 
   useEffect(() => {

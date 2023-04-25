@@ -26,7 +26,7 @@ const MainContainer = styled(Box)(({ theme }) => {
   }
 })
 
-const Hex = styled('svg')(() => {
+const BackHex = styled('svg')(() => {
   const { name: themeName } = useThemeContext()
   const strokeColor = useMemo(() => {
     if (themeName === 'dark') {
@@ -53,7 +53,7 @@ export default function SpanSubtitle (): JSX.Element {
   return (
     <MainContainer>
       <StyledSpan component='span'>Doers School</StyledSpan>
-      <Hex
+      <BackHex
         xmlns='http://www.w3.org/2000/svg'
         width='189.285'
         height='187.866'
@@ -65,7 +65,7 @@ export default function SpanSubtitle (): JSX.Element {
           fill='none'
           strokeWidth='12'
         />
-      </Hex>
+      </BackHex>
     </MainContainer>
   )
 }

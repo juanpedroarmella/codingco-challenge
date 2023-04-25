@@ -1,9 +1,8 @@
-import { useThemeContext } from '@/styles/ThemeProvider'
 import Box from '@mui/material/Box'
-import { styled, Theme } from '@mui/material/styles'
-import { useMemo } from 'react'
+import { styled } from '@mui/material/styles'
 import Featured from './components/Featured'
 import HeroLogo from './components/img/HeroLogo'
+import Line from './components/img/Line'
 import ScrollArrow from './components/img/ScrollArrow'
 import SpanSubtitle from './components/SpanSubtitle'
 
@@ -34,27 +33,6 @@ const Main = styled(Box)(({ theme }) => {
     },
     [theme.breakpoints.up('xl')]: {
       maxWidth: theme.breakpoints.values.xl
-    }
-  }
-})
-
-interface LineSpanProps {
-  theme?: Theme
-  withbottom?: string
-}
-
-const LineSpan = styled(Box)<LineSpanProps>(({ theme, withbottom }) => {
-  const { name: themeName } = useThemeContext()
-  const borderColor = useMemo(
-    () => (themeName === 'dark' ? '#FFFFFF77' : theme.palette.text.primary),
-    [theme.palette.text.primary, themeName]
-  )
-  return {
-    borderTop: `1px solid ${borderColor}`,
-    borderBottom: withbottom === 'true' ? `1px solid ${borderColor}` : 'none',
-    height: '125px',
-    [theme.breakpoints.down('sm')]: {
-      height: '75px'
     }
   }
 })
@@ -103,9 +81,9 @@ export default function Hero (): JSX.Element {
   return (
     <Bg component='section' data-testid='hero'>
       <Lines data-testid='lines'>
-        <LineSpan />
-        <LineSpan />
-        <LineSpan withbottom='true' />
+        <Line />
+        <Line />
+        <Line withbottom='true' />
       </Lines>
       <Main data-testid='content-limiter'>
         <Text data-testid='content'>
