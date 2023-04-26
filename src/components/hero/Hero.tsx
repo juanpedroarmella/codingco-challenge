@@ -1,9 +1,11 @@
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 import Featured from './components/Featured'
+import Asterisk from './components/img/Asterisk'
 import HeroLogo from './components/img/HeroLogo'
 import Line from './components/img/Line'
 import ScrollArrow from './components/img/ScrollArrow'
+import SmallAsterisk from './components/img/SmallAsterisk'
 import SpanSubtitle from './components/SpanSubtitle'
 
 const Bg = styled(Box)(({ theme }) => {
@@ -91,6 +93,8 @@ export default function Hero (): JSX.Element {
             <HeroLogo data-testid='logo' />
             <SpanSubtitle data-testid='subtitle' />
             <ScrollArrow />
+            <Asterisk />
+            <SmallAsterisk />
           </Slogan>
           <Featured />
         </Text>
