@@ -4,9 +4,7 @@ import Footer from './footer/Footer'
 import Header from './header/Header'
 
 const MainLayout = styled(Box)(() => {
-  return {
-    minHeight: '100vh'
-  }
+  return { minHeight: '100vh' }
 })
 
 interface LayoutProps {

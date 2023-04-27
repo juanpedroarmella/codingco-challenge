@@ -39,14 +39,15 @@ interface Props {
   themename: ThemeNames
 }
 
-export default function Hex({ themename }: Props): JSX.Element {
+export default function Hex ({ themename }: Props): JSX.Element {
   return (
     <HexSvg
       themename={themename}
       xmlns='http://www.w3.org/2000/svg'
       width='156.064'
       height='180.206'
-      viewBox='0 0 156.064 180.206'>
+      viewBox='0 0 156.064 180.206'
+    >
       <path
         d='M127.361,0H42.454L0,73.532l42.454,73.532h84.907l42.454-73.532Z'
         transform='translate(4.5 175.01) rotate(-90)'

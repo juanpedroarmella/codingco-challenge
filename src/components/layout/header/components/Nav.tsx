@@ -8,7 +8,7 @@ const NavContainer = styled(Box)(({ theme }) => {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '100%',
+    width: '90%',
     margin: '0 2vw',
     padding: '0 0.75rem',
     [theme.breakpoints.up('xs')]: {

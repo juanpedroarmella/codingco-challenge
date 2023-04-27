@@ -59,7 +59,7 @@ const ParallaxContainer = styled(Box)(({ theme }) => {
     },
     [theme.breakpoints.down('sm')]: {
       overflow: 'hidden',
-      top: -260,
+      top: -165,
       right: 0,
       width: 125,
       height: 125

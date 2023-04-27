@@ -10,7 +10,7 @@ const colors = {
   orange: '#E1DF3C'
 }
 
-const AsteriskSvg = styled('svg')(() => {
+const AsteriskSvg = styled('svg')(({ theme }) => {
   const { name: themeName } = useThemeContext()
   const fillColor = colors[themeName]
 
@@ -32,7 +32,11 @@ const AsteriskSvg = styled('svg')(() => {
       fill: fillColor
     },
     width: 60,
-    height: 60
+    height: 60,
+    [theme.breakpoints.down('sm')]: {
+      width: 35,
+      height: 35
+    }
   }
 })
 
@@ -45,8 +49,8 @@ const ParallaxContainer = styled(Box)(({ theme }) => {
     left: 0,
     transform: `translateY(${offsetY / 4}px)`,
     [theme.breakpoints.down('md')]: {
-      top: -125,
-      left: 25
+      top: -75,
+      left: 20
     }
   }
 })

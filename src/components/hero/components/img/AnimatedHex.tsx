@@ -33,7 +33,8 @@ const HexSvg = styled('svg')(() => {
       fill: themeName === 'light' ? '#E1DF3C' : 'none'
     },
     width: 189,
-    height: 187
+    height: 187,
+    zIndex: 0
   }
 })
 
@@ -46,11 +47,11 @@ const ParallaxContainer = styled(Box)(({ theme }) => {
     left: 0,
     transform: `translateY(${offsetY / 4}px)`,
     [theme.breakpoints.down('lg')]: {
-      left: -50
+      bottom: -60
     },
     [theme.breakpoints.down('md')]: {
       bottom: -60,
-      left: -50
+      left: -20
     },
     [theme.breakpoints.down('sm')]: {
       display: 'none'

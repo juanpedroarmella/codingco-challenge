@@ -11,7 +11,10 @@ import SpanSubtitle from './components/SpanSubtitle'
 
 const Bg = styled(Box)(({ theme }) => {
   return {
-    backgroundColor: theme.palette.background.default
+    backgroundColor: theme.palette.background.default,
+    height: '100vh',
+    minHeight: '750px',
+    position: 'relative'
   }
 })
 
@@ -21,7 +24,15 @@ const Main = styled(Box)(({ theme }) => {
     justifyContent: 'center',
     alignItems: 'center',
     margin: 'auto',
-    height: '100vh',
+    position: 'absolute',
+    top: '45%',
+    left: 0,
+    right: 0,
+    transform: 'translateY(-50%)',
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      top: '29.5%'
+    },
     [theme.breakpoints.up('xs')]: {
       maxWidth: theme.breakpoints.values.xs
     },
@@ -43,14 +54,13 @@ const Main = styled(Box)(({ theme }) => {
 const Lines = styled(Box)(({ theme }) => {
   return {
     position: 'absolute',
-    top: '50%',
+    top: '45%',
     transform: 'translateY(-50%)',
     width: '100%',
+    zIndex: 0,
     [theme.breakpoints.down('sm')]: {
-      top: '345px',
-      transform: 'translateY(-40%)'
-    },
-    zIndex: 0
+      top: '34%'
+    }
   }
 })
 
@@ -61,11 +71,14 @@ const Text = styled(Box)(({ theme }) => {
     alignItems: 'center',
     width: '100%',
     flexWrap: 'wrap',
+    [theme.breakpoints.down('md')]: {
+      width: '100vw'
+    },
     [theme.breakpoints.down('sm')]: {
-      height: '225px',
+      justifyContent: 'space-between',
       position: 'absolute',
-      top: '345px',
-      transform: 'translateY(-40%)'
+      top: '75px',
+      transform: 'translateY(-30%)'
     }
   }
 })
