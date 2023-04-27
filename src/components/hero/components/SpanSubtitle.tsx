@@ -1,7 +1,6 @@
 import { useThemeContext } from '@/styles/ThemeProvider'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
-import { useMemo } from 'react'
 
 const StyledSpan = styled(Box)(({ theme }) => {
   return {
@@ -26,19 +25,16 @@ const MainContainer = styled(Box)(({ theme }) => {
   }
 })
 
+const colors = {
+  dark: '#0E64BA',
+  light: '#E9E6E1',
+  yellow: '#E9E6E1',
+  orange: '#0D753B'
+}
+
 const BackHex = styled('svg')(() => {
   const { name: themeName } = useThemeContext()
-  const strokeColor = useMemo(() => {
-    if (themeName === 'dark') {
-      return '#0E64BA'
-    }
-    if (themeName === 'light' || themeName === 'yellow') {
-      return '#E9E6E1'
-    }
-    if (themeName === 'orange') {
-      return '#0D753B'
-    }
-  }, [themeName])
+  const strokeColor = colors[themeName]
   return {
     position: 'absolute',
     width: '54px',

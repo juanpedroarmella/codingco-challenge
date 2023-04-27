@@ -1,18 +1,21 @@
+import { ThemeNames } from '@/styles/ThemeProvider'
 import { styled, Theme } from '@mui/material/styles'
-import { useMemo } from 'react'
 
 interface DiagonalArrowProps {
   theme?: Theme
-  themename: string
+  themename: ThemeNames
+}
+
+const colors = {
+  dark: '#E9E6E1',
+  light: '#000000',
+  yellow: '#707070',
+  orange: '#E9E6E1'
 }
 
 const DiagonalArrowSvg = styled('svg')<DiagonalArrowProps>(
   ({ theme, themename }) => {
-    const strokeColor = useMemo(() => {
-      if (themename === 'dark' || themename === 'orange') return '#E9E6E1'
-      if (themename === 'light') return '#000000'
-      if (themename === 'yellow') return '#707070'
-    }, [themename])
+    const strokeColor = colors[themename]
     return {
       width: '35px',
       height: '38px',
@@ -38,7 +41,7 @@ const DiagonalArrowSvg = styled('svg')<DiagonalArrowProps>(
 )
 
 interface Props {
-  themename: string
+  themename: ThemeNames
 }
 
 export default function DiagonalArrow ({ themename }: Props): JSX.Element {

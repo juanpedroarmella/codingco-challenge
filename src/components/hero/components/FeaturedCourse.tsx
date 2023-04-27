@@ -2,10 +2,16 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { styled, Theme, useTheme } from '@mui/material/styles'
 import Link from '@mui/material/Link'
-import { useMemo } from 'react'
 import { useThemeContext } from '@/styles/ThemeProvider'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import ArrowRight from './img/ArrowRight'
+
+const colors = {
+  dark: '#E9E6E1',
+  light: '#E1DF3C',
+  yellow: '#E9E6E1',
+  orange: '#E9E6E1'
+}
 
 interface ContainerProps {
   theme?: Theme
@@ -13,18 +19,7 @@ interface ContainerProps {
 
 const Container = styled(Box)<ContainerProps>(({ theme }) => {
   const { name: themename } = useThemeContext()
-  const bgOnHover = useMemo(() => {
-    if (
-      themename === 'dark' ||
-      themename === 'orange' ||
-      themename === 'yellow'
-    ) {
-      return '#E9E6E1'
-    }
-    if (themename === 'light') {
-      return '#E1DF3C'
-    }
-  }, [themename])
+  const bgOnHover = colors[themename]
   return {
     padding: '7px 20px',
     marginLeft: '4px',

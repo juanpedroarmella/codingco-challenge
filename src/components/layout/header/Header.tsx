@@ -9,13 +9,12 @@ interface Props {
   scrolled: string
 }
 
-const HeaderMainContainer = styled(Box)<Props>(({ theme, scrolled }) => {
+const HeaderMainContainer = styled(Box)<Props>(({ scrolled }) => {
   return {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:
-      scrolled === 'true' ? '#ff1f57' : theme.palette.background.default,
+    backgroundColor: scrolled === 'true' ? '#ff1f57' : 'transparent',
     minHeight: '56px',
     position: 'fixed',
     transition: 'background 0.3s',

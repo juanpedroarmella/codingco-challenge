@@ -1,21 +1,16 @@
 import { useThemeContext } from '@/styles/ThemeProvider'
 import { styled } from '@mui/material/styles'
-import { useMemo } from 'react'
+
+const colors = {
+  dark: '#E6511B',
+  light: '#000000',
+  yellow: '#000000',
+  orange: '#000000'
+}
 
 const DotsSvg = styled('svg')(({ theme }) => {
   const { name: themename } = useThemeContext()
-  const strokeColor = useMemo(() => {
-    if (themename === 'dark') {
-      return '#E6511B'
-    }
-    if (
-      themename === 'light' ||
-      themename === 'yellow' ||
-      themename === 'orange'
-    ) {
-      return '#000000'
-    }
-  }, [themename])
+  const strokeColor = colors[themename]
   return {
     position: 'relative',
     left: 0,

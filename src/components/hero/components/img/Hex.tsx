@@ -1,26 +1,20 @@
+import { ThemeNames } from '@/styles/ThemeProvider'
 import { styled, Theme } from '@mui/material/styles'
-import { useMemo } from 'react'
+
+const colors = {
+  dark: '#E6511B',
+  yellow: '#000000',
+  light: '#FF1F57',
+  orange: '#37A87E'
+}
 
 interface HexSvgProps {
   theme?: Theme
-  themename: string
+  themename: ThemeNames
 }
 
 const HexSvg = styled('svg')<HexSvgProps>(({ themename, theme }) => {
-  const strokeColor = useMemo(() => {
-    if (themename === 'dark') {
-      return '#E6511B'
-    }
-    if (themename === 'light') {
-      return '#FF1F57'
-    }
-    if (themename === 'yellow') {
-      return '#000000'
-    }
-    if (themename === 'orange') {
-      return '#37A87E'
-    }
-  }, [themename])
+  const strokeColor = colors[themename]
   return {
     position: 'relative',
     width: '147px',
@@ -42,18 +36,17 @@ const HexSvg = styled('svg')<HexSvgProps>(({ themename, theme }) => {
 })
 
 interface Props {
-  themename: string
+  themename: ThemeNames
 }
 
-export default function Hex ({ themename }: Props): JSX.Element {
+export default function Hex({ themename }: Props): JSX.Element {
   return (
     <HexSvg
       themename={themename}
       xmlns='http://www.w3.org/2000/svg'
       width='156.064'
       height='180.206'
-      viewBox='0 0 156.064 180.206'
-    >
+      viewBox='0 0 156.064 180.206'>
       <path
         d='M127.361,0H42.454L0,73.532l42.454,73.532h84.907l42.454-73.532Z'
         transform='translate(4.5 175.01) rotate(-90)'

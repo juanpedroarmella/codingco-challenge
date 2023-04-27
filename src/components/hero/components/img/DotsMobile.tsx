@@ -1,24 +1,20 @@
+import { ThemeNames } from '@/styles/ThemeProvider'
 import { styled, Theme } from '@mui/material/styles'
-import { useMemo } from 'react'
 
 interface DotsProps {
   theme?: Theme
-  themename: string
+  themename: ThemeNames
+}
+
+const colors = {
+  dark: '#E6511B',
+  light: '#000000',
+  yellow: '#000000',
+  orange: '#000000'
 }
 
 const DotsSvg = styled('svg')<DotsProps>(({ theme, themename }) => {
-  const strokeColor = useMemo(() => {
-    if (themename === 'dark') {
-      return '#E6511B'
-    }
-    if (
-      themename === 'light' ||
-      themename === 'yellow' ||
-      themename === 'orange'
-    ) {
-      return '#000000'
-    }
-  }, [themename])
+  const strokeColor = colors[themename]
   return {
     position: 'relative',
     left: '274px',
@@ -37,7 +33,7 @@ const DotsSvg = styled('svg')<DotsProps>(({ theme, themename }) => {
 })
 
 interface Props {
-  themename: string
+  themename: ThemeNames
 }
 
 export default function DotsMobile ({ themename }: Props): JSX.Element {

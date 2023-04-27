@@ -1,29 +1,25 @@
-import { useThemeContext } from '@/styles/ThemeProvider'
+import { ThemeNames, useThemeContext } from '@/styles/ThemeProvider'
 import Box from '@mui/material/Box'
 import { styled, Theme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
-import { useMemo } from 'react'
 import DiagonalArrow from './img/DiagonalArrow'
 import DotsMobile from './img/DotsMobile'
 import Hex from './img/Hex'
 
+const colors = {
+  dark: '#E6511B',
+  light: '#000000',
+  yellow: '#000000',
+  orange: '#FFFFFF'
+}
+
 interface TextProps {
   theme?: Theme
-  themename: string
+  themename: ThemeNames
 }
 
 const Text = styled(Typography)<TextProps>(({ theme, themename }) => {
-  const letterColor = useMemo(() => {
-    if (themename === 'dark') {
-      return '#E6511B'
-    }
-    if (themename === 'light' || themename === 'yellow') {
-      return '#000000'
-    }
-    if (themename === 'orange') {
-      return '#FFFFFF'
-    }
-  }, [themename])
+  const letterColor = colors[themename]
   return {
     fontFamily: 'Work Sans',
     fontWeight: 'bold',

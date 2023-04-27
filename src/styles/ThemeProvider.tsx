@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { light, dark, orange, yellow } from './Themes'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 
-enum ThemeNames {
+export enum ThemeNames {
   LIGHT = 'light',
   DARK = 'dark',
   ORANGE = 'orange',

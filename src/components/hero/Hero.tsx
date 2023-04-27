@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 import Featured from './components/Featured'
+import AnimatedHex from './components/img/AnimatedHex'
 import Asterisk from './components/img/Asterisk'
 import HeroLogo from './components/img/HeroLogo'
 import Line from './components/img/Line'
@@ -46,7 +47,7 @@ const Lines = styled(Box)(({ theme }) => {
     transform: 'translateY(-50%)',
     width: '100%',
     [theme.breakpoints.down('sm')]: {
-      top: '38%',
+      top: '345px',
       transform: 'translateY(-40%)'
     },
     zIndex: 0
@@ -63,7 +64,7 @@ const Text = styled(Box)(({ theme }) => {
     [theme.breakpoints.down('sm')]: {
       height: '225px',
       position: 'absolute',
-      top: '38%',
+      top: '345px',
       transform: 'translateY(-40%)'
     }
   }
@@ -95,6 +96,7 @@ export default function Hero (): JSX.Element {
             <ScrollArrow />
             <Asterisk />
             <SmallAsterisk />
+            <AnimatedHex />
           </Slogan>
           <Featured />
         </Text>
