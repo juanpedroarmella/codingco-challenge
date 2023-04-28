@@ -27,6 +27,7 @@ const TrapSvg = styled('svg')(({ theme }) => {
       }
     },
     animation: 'rotate 3s ease infinite',
+    zIndex: -1,
     '& path': {
       fill: fillColor
     }
