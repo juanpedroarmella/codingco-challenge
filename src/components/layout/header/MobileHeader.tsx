@@ -18,7 +18,7 @@ const BarContainer = styled(Box)(() => {
     background: '#E9E6E1',
     height: '56px',
     position: 'fixed',
-    zIndex: 3,
+    zIndex: 16,
     top: 0,
     left: 0,
     width: '100vw'

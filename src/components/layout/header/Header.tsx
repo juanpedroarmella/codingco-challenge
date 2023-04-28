@@ -31,8 +31,7 @@ const Header: React.FC = (): JSX.Element => {
     <HeaderMainContainer
       scrolled={scrolled.toString()}
       data-testid='header-container'
-      component='header'
-    >
+      component='header'>
       <Nav />
     </HeaderMainContainer>
   )
