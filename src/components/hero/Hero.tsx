@@ -7,6 +7,7 @@ import HeroLogo from './components/img/HeroLogo'
 import Line from './components/img/Line'
 import ScrollArrow from './components/img/ScrollArrow'
 import SmallAsterisk from './components/img/SmallAsterisk'
+import Trap from './components/img/Trap'
 import SpanSubtitle from './components/SpanSubtitle'
 
 const Bg = styled(Box)(({ theme }) => {
@@ -110,6 +111,7 @@ export default function Hero (): JSX.Element {
             <Asterisk />
             <SmallAsterisk />
             <AnimatedHex />
+            <Trap />
           </Slogan>
           <Featured />
         </Text>
