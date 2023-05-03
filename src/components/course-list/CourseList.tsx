@@ -20,9 +20,9 @@ const MainContainer = styled(Box)(({ theme }) => {
     margin: 'auto',
     justifyContent: 'space-between',
     gap: '8.33%',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down(1000)]: {
       flexDirection: 'column',
-      gap: 'auto'
+      gap: '50px'
     },
     [theme.breakpoints.down(576)]: {
       paddingLeft: 30,
@@ -39,6 +39,9 @@ const MainContainer = styled(Box)(({ theme }) => {
     },
     [theme.breakpoints.up(1200)]: {
       maxWidth: 1140
+    },
+    [theme.breakpoints.up('xl')]: {
+      maxWidth: theme.breakpoints.values.lg
     }
   }
 })

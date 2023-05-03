@@ -18,7 +18,7 @@ const GoToTopButton = styled('button')<ButtonProps>(({ show }) => {
     border: '3px solid #1D1D1B',
     borderRadius: '50%',
     cursor: 'pointer',
-    zIndex: 4,
+    zIndex: 16,
     opacity: show ? 1 : 0,
     visibility: show ? 'visible' : 'hidden',
     transition: 'opacity 0.5s ease, visibility 0.5s ease',

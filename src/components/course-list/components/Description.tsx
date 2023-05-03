@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 
-const MainContainer = styled(Box)(({ theme }) => {
+const MainContainer = styled(Box)(() => {
   return {
     minWidth: '33.3%',
     textAlign: 'left',
@@ -17,13 +17,14 @@ const Title = styled('h3')(({ theme }) => {
     fontFamily: 'Larken',
     fontSize: 39,
     color: '#000000',
-    lineHeight: '50px',
+    marginTop: 0,
+    marginBottom: '50px',
     fontWeight: '100',
     fontStyle: 'normal'
   }
 })
 
-const Text = styled('p')(({ theme }) => {
+const Text = styled('p')(() => {
   return {
     fontFamily: 'Work Sans',
     fontSize: 16,
@@ -34,11 +35,14 @@ const Text = styled('p')(({ theme }) => {
   }
 })
 
-export default function Description(): JSX.Element {
+export default function Description (): JSX.Element {
   return (
     <MainContainer component='section'>
       <Title>
-        Mucho mas <br /> que una escuela de <br /> <em>creativos</em>
+        Mucho mas <br /> que una escuela de <br />{' '}
+        <b>
+          <em>creativos</em>
+        </b>
       </Title>
       <Text>
         Un Brother es alguien que <em>piensa continuamente,</em> inquieto,
