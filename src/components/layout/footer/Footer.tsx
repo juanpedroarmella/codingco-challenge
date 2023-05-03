@@ -43,8 +43,6 @@ const Footer: React.FC = (): JSX.Element => {
       data-testid='footer-container'
       component='footer'
       bgcolor='#383838'
-      position='relative'
-      zIndex={13}
       p={4}
     >
       <FooterMainContainer>

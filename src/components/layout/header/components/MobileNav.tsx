@@ -1,6 +1,6 @@
 import MobileAddress from '@/components/atoms/MobileAddress'
 import MobileNavButton from '@/components/atoms/MobileNavButton'
-import WorldWide from '@/components/atoms/WorldWide'
+import WorldWide from '@/components/layout/header/components/icons/WorldWide'
 import Box from '@mui/material/Box'
 
 const MobileNav: React.FC = (): JSX.Element => {

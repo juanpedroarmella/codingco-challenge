@@ -19,7 +19,7 @@ const HeaderMainContainer = styled(Box)<Props>(({ scrolled }) => {
     position: 'fixed',
     transition: 'background 0.3s',
     width: '100%',
-    zIndex: 2
+    zIndex: 16
   }
 })
 
@@ -31,7 +31,8 @@ const Header: React.FC = (): JSX.Element => {
     <HeaderMainContainer
       scrolled={scrolled.toString()}
       data-testid='header-container'
-      component='header'>
+      component='header'
+    >
       <Nav />
     </HeaderMainContainer>
   )

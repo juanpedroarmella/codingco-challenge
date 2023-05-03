@@ -1,0 +1,64 @@
+import Box from '@mui/material/Box'
+import { styled } from '@mui/material/styles'
+
+const MainContainer = styled(Box)(({ theme }) => {
+  return {
+    minWidth: '33.3%',
+    textAlign: 'left',
+    '& em': {
+      textDecoration: 'underline',
+      fontStyle: 'normal'
+    }
+  }
+})
+
+const Title = styled('h3')(({ theme }) => {
+  return {
+    fontFamily: 'Larken',
+    fontSize: 39,
+    color: '#000000',
+    lineHeight: '50px',
+    fontWeight: '100',
+    fontStyle: 'normal'
+  }
+})
+
+const Text = styled('p')(({ theme }) => {
+  return {
+    fontFamily: 'Work Sans',
+    fontSize: 16,
+    color: '#000000',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    lineHeight: '20px'
+  }
+})
+
+export default function Description(): JSX.Element {
+  return (
+    <MainContainer component='section'>
+      <Title>
+        Mucho mas <br /> que una escuela de <br /> <em>creativos</em>
+      </Title>
+      <Text>
+        Un Brother es alguien que <em>piensa continuamente,</em> inquieto,
+        <b> curioso</b> y reflexivo.
+      </Text>
+      <Text>
+        Que se <em>plantea preguntas</em> y busca las respuestas. Un Brother es
+        alguien que se abre camino, proactivo, que tiene iniciativas, que
+        <b> busca oportunidades.</b>
+      </Text>
+      <Text>
+        Un Brother no deja que las cosas pasen. Va a buscarlas y las pelea y que
+        si gana, sigue a por más.
+      </Text>
+      <Text>
+        Y si pierde{' '}
+        <b>
+          no se rinde <em>jamás.</em>
+        </b>
+      </Text>
+    </MainContainer>
+  )
+}

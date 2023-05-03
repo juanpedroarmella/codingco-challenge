@@ -48,6 +48,13 @@
 }
 
 @font-face {
+  font-family: 'Larken';
+  src: url('/fonts/Larken/LarkenDEMO-ExtraBold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Gotham';
   src: url('/fonts/Gotham/Gotham-Book.otf');
   font-weight: normal;

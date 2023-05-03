@@ -29,8 +29,8 @@ function createCustomTheme (
   return createTheme({
     ...fonts,
     palette: {
-      ...defaultColors,
       background: {
+        paper: defaultColors.background.paper,
         default: backgroundDefault
       },
       text: {
