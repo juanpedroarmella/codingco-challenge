@@ -1,12 +1,12 @@
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 import { useMediaQuery, useTheme } from '@mui/material'
-import CarouselDesktop from './CarouselDeskop'
-import CarouselMobile from './CarouselMobile'
+import ProductCarousel from './ProductCarousel'
 
 const MainContainer = styled(Box)(({ theme }) => {
   return {
-    minWidth: '50%'
+    minWidth: '50%',
+    position: 'relative'
   }
 })
 
@@ -18,17 +18,20 @@ const Title = styled('h3')(({ theme }) => {
     marginTop: 0,
     marginBottom: '50px',
     fontWeight: 'bold',
-    fontStyle: 'normal'
+    fontStyle: 'normal',
+    [theme.breakpoints.down('sm')]: {
+      width: '65%'
+    }
   }
 })
 
 export default function CoursesAndWorkshops (): JSX.Element {
   const theme = useTheme()
-  const isSm = useMediaQuery(theme.breakpoints.down('sm'))
+  const isSm = useMediaQuery(theme.breakpoints.down('xs'))
   return (
     <MainContainer component='section'>
       <Title>Cursos & Workshops</Title>
-      {isSm ? <CarouselMobile /> : <CarouselDesktop />}
+      <ProductCarousel productsperslide={isSm ? 2 : 3} />
     </MainContainer>
   )
 }
