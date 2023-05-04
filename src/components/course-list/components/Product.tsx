@@ -15,8 +15,11 @@ const MainContainer = styled('a')(({ theme }) => {
       boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px'
     },
     [theme.breakpoints.down('sm')]: {
-      width: 144,
-      gap: '20px'
+      gap: '20px',
+      height: 247
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: 120
     }
   }
 })
@@ -37,6 +40,10 @@ const Title = styled('h3')(({ theme }) => {
     [theme.breakpoints.down('sm')]: {
       fontSize: 20,
       textAlign: 'center'
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: 15,
+      textAlign: 'center'
     }
   }
 })
@@ -44,12 +51,12 @@ const Title = styled('h3')(({ theme }) => {
 interface ProductProps {
   title: string
   img: string
-  places?: 'none' | 'few' | 'avaliable'
+  places?: 'none' | 'few' | 'available'
   alt: string
   type: 'workshop' | 'course'
 }
 
-export default function Product({
+export default function Product ({
   title,
   img,
   places,
@@ -57,7 +64,7 @@ export default function Product({
   type
 }: ProductProps): JSX.Element {
   const theme = useTheme()
-  const isSm = useMediaQuery(theme.breakpoints.down('sm'))
+  const isSm = useMediaQuery(theme.breakpoints.down('xs'))
   const [opacity, setOpacity] = useState<0 | 1>(0)
   const handleHover = (): void => {
     setOpacity(1)
@@ -69,16 +76,21 @@ export default function Product({
     <MainContainer
       href='#'
       onMouseOver={handleHover}
-      onMouseLeave={handleLeave}>
-      {isSm ? (
-        <Image src={img} width={144} height={144} alt={alt} />
-      ) : (
-        <Image src={img} width={144} height={144} alt={alt} />
-      )}
+      onMouseLeave={handleLeave}
+    >
+      {isSm
+        ? (
+          <Image src={img} width={120} height={120} alt={alt} />
+          )
+        : (
+          <Image src={img} width={144} height={144} alt={alt} />
+          )}
       <Title>{title}</Title>
-      {type === 'course' ? (
-        <PlacesInfo places={places ?? 'avaliable'} opacity={opacity} />
-      ) : null}
+      {type === 'course'
+        ? (
+          <PlacesInfo places={places ?? 'available'} opacity={opacity} />
+          )
+        : null}
     </MainContainer>
   )
 }

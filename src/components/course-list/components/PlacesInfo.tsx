@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import { useMemo } from 'react'
 
-const Container = styled(Box)<PlacesInfoProps>(({ places, opacity }) => {
+const Container = styled(Box)<PlacesInfoProps>(({ theme, places, opacity }) => {
   const colors = useMemo(() => {
     if (places === 'few') {
       return {
@@ -17,7 +17,7 @@ const Container = styled(Box)<PlacesInfoProps>(({ places, opacity }) => {
         color: 'black'
       }
     }
-    if (places === 'avaliable') {
+    if (places === 'available') {
       return {
         background: 'rgba(0,0,0,0.9)',
         color: '#E1DF3C'
@@ -43,6 +43,10 @@ const Container = styled(Box)<PlacesInfoProps>(({ places, opacity }) => {
     transition: 'opacity 0.3s ease',
     '& svg path': {
       fill: colors?.color
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: 120,
+      height: 120
     }
   }
 })
@@ -54,7 +58,7 @@ const Text = styled(Typography)(() => {
 })
 
 interface PlacesInfoProps {
-  places: 'none' | 'few' | 'avaliable'
+  places: 'none' | 'few' | 'available'
   opacity: 0 | 1
 }
 
@@ -63,9 +67,15 @@ export default function PlacesInfo ({
   opacity
 }: PlacesInfoProps): JSX.Element {
   const placesTextInfo = useMemo(() => {
-    if (places === 'none') { return ['Sold out!', ' Reserva para la proxima edición'] }
-    if (places === 'few') { return ['Quedan pocas plazas.', ' ¡No te quedes fuera!'] }
-    if (places === 'avaliable') { return ['Hay plazas disponibles.', ' ¡Apúntate!'] }
+    if (places === 'none') {
+      return ['Sold out!', ' Reserva para la proxima edición']
+    }
+    if (places === 'few') {
+      return ['Quedan pocas plazas.', ' ¡No te quedes fuera!']
+    }
+    if (places === 'available') {
+      return ['Hay plazas disponibles.', ' ¡Apúntate!']
+    }
 
     return []
   }, [places])
