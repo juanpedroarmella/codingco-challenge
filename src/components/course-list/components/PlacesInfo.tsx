@@ -30,7 +30,7 @@ const Container = styled(Box)<PlacesInfoProps>(({ theme, places, opacity }) => {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '10px',
+    gap: '15px',
     position: 'absolute',
     top: 0,
     left: 0,
@@ -41,6 +41,7 @@ const Container = styled(Box)<PlacesInfoProps>(({ theme, places, opacity }) => {
     background: colors?.background,
     color: colors?.color,
     transition: 'opacity 0.3s ease',
+    padding: '0 20px',
     '& svg path': {
       fill: colors?.color
     }

@@ -9,7 +9,7 @@ const MainContainer = styled('a')(({ theme }) => {
     display: 'flex',
     flexDirection: 'column',
     gap: '10px',
-    width: '85%',
+    width: '78%',
     position: 'relative',
     [theme.breakpoints.down('md')]: {
       width: '100%'
@@ -53,7 +53,7 @@ interface ProductProps {
   type: 'workshop' | 'course'
 }
 
-export default function Product({
+export default function Product ({
   title,
   img,
   places,
@@ -71,12 +71,15 @@ export default function Product({
     <MainContainer
       href='#'
       onMouseOver={handleHover}
-      onMouseLeave={handleLeave}>
+      onMouseLeave={handleLeave}
+    >
       <Box position='relative'>
         <Image src={img} alt={alt} fill />
-        {type === 'course' ? (
-          <PlacesInfo places={places ?? 'available'} opacity={opacity} />
-        ) : null}
+        {type === 'course'
+          ? (
+            <PlacesInfo places={places ?? 'available'} opacity={opacity} />
+            )
+          : null}
       </Box>
 
       <Title>{title}</Title>

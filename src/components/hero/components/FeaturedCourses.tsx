@@ -13,7 +13,10 @@ const Container = styled(Box)(({ theme }) => {
     listStyle: 'none',
     margin: 0,
     padding: 0,
-    maxHeight: '250px'
+    maxHeight: '250px',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: 10
+    }
   }
 })
 

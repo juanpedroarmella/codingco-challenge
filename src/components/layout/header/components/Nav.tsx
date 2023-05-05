@@ -11,6 +11,9 @@ const NavContainer = styled(Box)(({ theme }) => {
     width: '70%',
     margin: '0 2vw',
     padding: '0 0.75rem',
+    [theme.breakpoints.down('lg')]: {
+      width: '100%'
+    },
     [theme.breakpoints.up('xs')]: {
       maxWidth: theme.breakpoints.values.xs
     },

@@ -48,7 +48,7 @@ const ParallaxContainer = styled(Box)(({ theme }) => {
     },
     [theme.breakpoints.down('sm')]: {
       left: 'auto',
-      bottom: -70,
+      bottom: -190,
       right: 60
     }
   }

@@ -14,7 +14,11 @@ const CarouselContainer = styled(Box)<Props>(({ theme, productsperslide }) => ({
   gridTemplateColumns: `repeat(${productsperslide},1fr)`,
   justifyItems: 'center',
   alignItems: 'start',
-  gap: '10px',
+  marginBottom: '65px',
+  gap: 0,
+  [theme.breakpoints.down('md')]: {
+    gap: '10px'
+  },
   [theme.breakpoints.down('xs')]: {
     height: '250px',
     margin: '20px 0'
@@ -33,7 +37,6 @@ const Container = styled(Box)(({ theme }) => ({
 }))
 
 const ArrowsContainer = styled(Box)(({ theme }) => ({
-  marginTop: 5,
   alignSelf: 'flex-start',
   display: 'flex',
   flexDirection: 'column',
@@ -108,7 +111,7 @@ function ProductCarousel ({ productsperslide }: Props): JSX.Element {
           infinite
           nextArrow={<></>}
           prevArrow={<></>}
-          rows={productsperslide - 1}
+          rows={2}
           slidesToScroll={1}
         >
           {slides}

@@ -33,12 +33,16 @@ const YellowHex = styled(Image)(({ theme }) => {
     top: -20,
     right: -30,
     zIndex: -1,
-    [theme.breakpoints.down('md')]: {
-      top: -20,
-      right: -90
+    [theme.breakpoints.down('lg')]: {
+      top: -30,
+      right: -50
     },
     [theme.breakpoints.down('md')]: {
-      right: -110
+      right: -20
+    },
+    [theme.breakpoints.down('sm')]: {
+      right: -110,
+      top: 35
     }
   }
 })

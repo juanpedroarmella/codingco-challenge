@@ -28,7 +28,7 @@ const ScrollButton = styled('button')(({ theme }) => {
     border: 'none',
     zIndex: 2,
     [theme.breakpoints.down('sm')]: {
-      bottom: '-85px',
+      bottom: '-140px',
       left: '46%'
     }
   }

@@ -77,9 +77,9 @@ const Text = styled(Box)(({ theme }) => {
       width: '100vw'
     },
     [theme.breakpoints.down('sm')]: {
-      justifyContent: 'space-between',
+      minHeight: '740px',
       position: 'absolute',
-      top: '75px',
+      top: '85px',
       transform: 'translateY(-30%)'
     }
   }
