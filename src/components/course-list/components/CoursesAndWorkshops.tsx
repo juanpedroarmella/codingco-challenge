@@ -2,6 +2,7 @@ import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 import { useMediaQuery, useTheme } from '@mui/material'
 import ProductCarousel from './ProductCarousel'
+import Image from 'next/image'
 
 const MainContainer = styled(Box)(({ theme }) => {
   return {
@@ -19,8 +20,25 @@ const Title = styled('h3')(({ theme }) => {
     marginBottom: '50px',
     fontWeight: 'bold',
     fontStyle: 'normal',
+
     [theme.breakpoints.down(725)]: {
       width: '65%'
+    }
+  }
+})
+
+const YellowHex = styled(Image)(({ theme }) => {
+  return {
+    position: 'absolute',
+    top: -20,
+    right: -30,
+    zIndex: -1,
+    [theme.breakpoints.down('md')]: {
+      top: -20,
+      right: -90
+    },
+    [theme.breakpoints.down('md')]: {
+      right: -110
     }
   }
 })
@@ -32,6 +50,12 @@ export default function CoursesAndWorkshops (): JSX.Element {
     <MainContainer component='section'>
       <Title>Cursos & Workshops</Title>
       <ProductCarousel productsperslide={isSm ? 2 : 3} />
+      <YellowHex
+        src='/yellow-hex-full.svg'
+        width={248}
+        height={255}
+        alt='Yellow hex ilustration'
+      />
     </MainContainer>
   )
 }

@@ -35,18 +35,14 @@ const Container = styled(Box)<PlacesInfoProps>(({ theme, places, opacity }) => {
     top: 0,
     left: 0,
     textAlign: 'center',
-    width: 144,
-    height: 144,
+    width: '100%',
+    height: '100%',
     opacity,
     background: colors?.background,
     color: colors?.color,
     transition: 'opacity 0.3s ease',
     '& svg path': {
       fill: colors?.color
-    },
-    [theme.breakpoints.down('xs')]: {
-      width: 120,
-      height: 120
     }
   }
 })

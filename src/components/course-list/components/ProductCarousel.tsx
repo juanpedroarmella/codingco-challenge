@@ -15,14 +15,21 @@ const CarouselContainer = styled(Box)<Props>(({ theme, productsperslide }) => ({
   justifyItems: 'center',
   alignItems: 'start',
   gap: '10px',
-  [theme.breakpoints.down('sm')]: {
-    margin: '27px 0'
+  [theme.breakpoints.down('xs')]: {
+    height: '250px',
+    margin: '20px 0'
+  },
+  [theme.breakpoints.down(350)]: {
+    height: '200px'
   }
 }))
 
-const Container = styled(Box)(() => ({
+const Container = styled(Box)(({ theme }) => ({
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'center',
+  [theme.breakpoints.down('lg')]: {
+    justifyContent: 'space-between'
+  }
 }))
 
 const ArrowsContainer = styled(Box)(({ theme }) => ({
@@ -34,6 +41,9 @@ const ArrowsContainer = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   gap: 30,
   width: '8%',
+  [theme.breakpoints.down('md')]: {
+    width: '10%'
+  },
   [theme.breakpoints.down(725)]: {
     position: 'absolute',
     top: 0,
@@ -49,6 +59,9 @@ const ArrowsContainer = styled(Box)(({ theme }) => ({
 const SliderContainer = styled(Box)(({ theme }) => {
   return {
     width: '90%',
+    [theme.breakpoints.down('md')]: {
+      width: '85%'
+    },
     [theme.breakpoints.down(725)]: {
       width: '100%'
     }
@@ -59,7 +72,7 @@ interface Props {
   productsperslide: number
 }
 
-function ProductCarousel({ productsperslide }: Props): JSX.Element {
+function ProductCarousel ({ productsperslide }: Props): JSX.Element {
   const [sliderRef, setSliderRef] = useState<Slider | null>(null)
 
   const slides = useMemo(() => {
@@ -96,7 +109,8 @@ function ProductCarousel({ productsperslide }: Props): JSX.Element {
           nextArrow={<></>}
           prevArrow={<></>}
           rows={productsperslide - 1}
-          slidesToScroll={1}>
+          slidesToScroll={1}
+        >
           {slides}
         </Slider>
       </SliderContainer>

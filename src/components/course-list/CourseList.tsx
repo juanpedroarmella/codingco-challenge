@@ -8,7 +8,9 @@ const Bg = styled(Box)(({ theme }) => {
     minHeight: '95vh',
     position: 'relative',
     zIndex: 13,
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
+    justifyContent: 'space-between',
+    overflow: 'hidden'
   }
 })
 
@@ -18,7 +20,7 @@ const MainContainer = styled(Box)(({ theme }) => {
     paddingTop: 90,
     paddingBottom: 40,
     margin: 'auto',
-    justifyContent: 'space-between',
+
     gap: '8.33%',
     [theme.breakpoints.down(1000)]: {
       flexDirection: 'column',

@@ -20,7 +20,33 @@ const Title = styled('h3')(({ theme }) => {
     marginTop: 0,
     marginBottom: '50px',
     fontWeight: '100',
-    fontStyle: 'normal'
+    fontStyle: 'normal',
+    display: 'inline-block',
+    position: 'relative',
+    '&:before': {
+      '@keyframes rotate': {
+        '0%': {
+          transform: 'rotate(0)'
+        },
+        '50%': {
+          transform: 'rotate(20deg)'
+        },
+
+        '100%': {
+          transform: 'rotate(0)'
+        }
+      },
+      animation: 'rotate 3s ease infinite',
+      backgroundImage: 'url(/yellow-trap.svg)',
+      backgroundSize: 'cover',
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      right: -20,
+      width: '130px',
+      height: '130px',
+      zIndex: -1
+    }
   }
 })
 

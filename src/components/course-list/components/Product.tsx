@@ -1,5 +1,5 @@
-import { styled, useTheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
+import Box from '@mui/material/Box'
+import { styled } from '@mui/material/styles'
 import Image from 'next/image'
 import { useState } from 'react'
 import PlacesInfo from './PlacesInfo'
@@ -9,14 +9,14 @@ const MainContainer = styled('a')(({ theme }) => {
     display: 'flex',
     flexDirection: 'column',
     gap: '10px',
-    width: 144,
+    width: '85%',
     position: 'relative',
-    '& img': {
-      boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px'
+    [theme.breakpoints.down('md')]: {
+      width: '100%'
     },
-
-    [theme.breakpoints.down('xs')]: {
-      width: 120
+    '& img': {
+      boxShadow: '3px 3px 5px 0px rgba(0,0,0,0.3) ',
+      position: 'relative !important'
     }
   }
 })
@@ -60,8 +60,6 @@ export default function Product({
   alt,
   type
 }: ProductProps): JSX.Element {
-  const theme = useTheme()
-  const isSm = useMediaQuery(theme.breakpoints.down('xs'))
   const [opacity, setOpacity] = useState<0 | 1>(0)
   const handleHover = (): void => {
     setOpacity(1)
@@ -74,15 +72,14 @@ export default function Product({
       href='#'
       onMouseOver={handleHover}
       onMouseLeave={handleLeave}>
-      {isSm ? (
-        <Image src={img} width={120} height={120} alt={alt} />
-      ) : (
-        <Image src={img} width={144} height={144} alt={alt} />
-      )}
+      <Box position='relative'>
+        <Image src={img} alt={alt} fill />
+        {type === 'course' ? (
+          <PlacesInfo places={places ?? 'available'} opacity={opacity} />
+        ) : null}
+      </Box>
+
       <Title>{title}</Title>
-      {type === 'course' ? (
-        <PlacesInfo places={places ?? 'available'} opacity={opacity} />
-      ) : null}
     </MainContainer>
   )
 }
