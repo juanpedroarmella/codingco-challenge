@@ -23,13 +23,20 @@ const Container = styled(Box)(() => ({
 }))
 
 const ArrowsContainer = styled(Box)(({ theme }) => ({
+  marginTop: 5,
   alignSelf: 'flex-start',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
+  gap: 30,
   width: '8%',
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down(725)]: {
+    position: 'absolute',
+    top: 0,
+    right: 20
+  },
+  [theme.breakpoints.down('xs')]: {
     position: 'absolute',
     top: 0,
     right: 0
@@ -39,7 +46,7 @@ const ArrowsContainer = styled(Box)(({ theme }) => ({
 const SliderContainer = styled(Box)(({ theme }) => {
   return {
     width: '90%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down(725)]: {
       width: '100%'
     }
   }
@@ -49,8 +56,9 @@ interface Props {
   productsperslide: number
 }
 
-function ProductCarousel({ productsperslide }: Props): JSX.Element {
+function ProductCarousel ({ productsperslide }: Props): JSX.Element {
   const [sliderRef, setSliderRef] = useState<Slider | null>(null)
+
   const slides = useMemo(() => {
     const arr: JSX.Element[] = []
     for (let i = 0; i < data.length; i += productsperslide) {
@@ -85,7 +93,8 @@ function ProductCarousel({ productsperslide }: Props): JSX.Element {
           nextArrow={<></>}
           prevArrow={<></>}
           rows={productsperslide - 1}
-          slidesToScroll={1}>
+          slidesToScroll={1}
+        >
           {slides}
         </Slider>
       </SliderContainer>

@@ -19,7 +19,7 @@ const Title = styled('h3')(({ theme }) => {
     marginBottom: '50px',
     fontWeight: 'bold',
     fontStyle: 'normal',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down(725)]: {
       width: '65%'
     }
   }
