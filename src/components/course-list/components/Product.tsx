@@ -14,10 +14,7 @@ const MainContainer = styled('a')(({ theme }) => {
     '& img': {
       boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px'
     },
-    [theme.breakpoints.down('sm')]: {
-      gap: '20px',
-      height: 247
-    },
+
     [theme.breakpoints.down('xs')]: {
       width: 120
     }
@@ -56,7 +53,7 @@ interface ProductProps {
   type: 'workshop' | 'course'
 }
 
-export default function Product ({
+export default function Product({
   title,
   img,
   places,
@@ -76,21 +73,16 @@ export default function Product ({
     <MainContainer
       href='#'
       onMouseOver={handleHover}
-      onMouseLeave={handleLeave}
-    >
-      {isSm
-        ? (
-          <Image src={img} width={120} height={120} alt={alt} />
-          )
-        : (
-          <Image src={img} width={144} height={144} alt={alt} />
-          )}
+      onMouseLeave={handleLeave}>
+      {isSm ? (
+        <Image src={img} width={120} height={120} alt={alt} />
+      ) : (
+        <Image src={img} width={144} height={144} alt={alt} />
+      )}
       <Title>{title}</Title>
-      {type === 'course'
-        ? (
-          <PlacesInfo places={places ?? 'available'} opacity={opacity} />
-          )
-        : null}
+      {type === 'course' ? (
+        <PlacesInfo places={places ?? 'available'} opacity={opacity} />
+      ) : null}
     </MainContainer>
   )
 }

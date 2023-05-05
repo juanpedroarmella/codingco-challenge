@@ -9,12 +9,15 @@ import 'slick-carousel/slick/slick-theme.css'
 import CarouselNext from './CarouselNext'
 import CarouselBack from './CarouselBack'
 
-const CarouselContainer = styled(Box)<Props>(({ productsperslide }) => ({
+const CarouselContainer = styled(Box)<Props>(({ theme, productsperslide }) => ({
   display: 'grid',
   gridTemplateColumns: `repeat(${productsperslide},1fr)`,
   justifyItems: 'center',
-  alignItems: 'center',
-  gap: '10px'
+  alignItems: 'start',
+  gap: '10px',
+  [theme.breakpoints.down('sm')]: {
+    margin: '27px 0'
+  }
 }))
 
 const Container = styled(Box)(() => ({
@@ -56,7 +59,7 @@ interface Props {
   productsperslide: number
 }
 
-function ProductCarousel ({ productsperslide }: Props): JSX.Element {
+function ProductCarousel({ productsperslide }: Props): JSX.Element {
   const [sliderRef, setSliderRef] = useState<Slider | null>(null)
 
   const slides = useMemo(() => {
@@ -93,8 +96,7 @@ function ProductCarousel ({ productsperslide }: Props): JSX.Element {
           nextArrow={<></>}
           prevArrow={<></>}
           rows={productsperslide - 1}
-          slidesToScroll={1}
-        >
+          slidesToScroll={1}>
           {slides}
         </Slider>
       </SliderContainer>
