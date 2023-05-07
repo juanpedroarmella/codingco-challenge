@@ -1,13 +1,16 @@
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
+import SeeAllCourses from './components/SeeAllCourses'
 import CoursesAndWorkshops from './components/CoursesAndWorkshops'
 import Description from './components/Description'
 import YellowMisc from './components/img/YellowMisc'
 
 const Bg = styled(Box)(({ theme }) => {
   return {
-    minHeight: '88vh',
+    minHeight: '100vh',
     position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
     zIndex: 13,
     backgroundColor: theme.palette.background.paper,
     justifyContent: 'space-between',
@@ -56,6 +59,7 @@ export default function CourseList (): JSX.Element {
         <Description />
         <CoursesAndWorkshops />
       </MainContainer>
+      <SeeAllCourses />
       <YellowMisc />
     </Bg>
   )

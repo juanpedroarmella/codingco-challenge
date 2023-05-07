@@ -5,8 +5,8 @@ const Misc = styled('svg')(({ theme }) => {
     width: 458,
     height: 320,
     position: 'absolute',
-    bottom: -70,
-    left: '20%',
+    bottom: 10,
+    left: '28%',
     zIndex: -1,
     '& path': {
       stroke: '#E1DF3C'
