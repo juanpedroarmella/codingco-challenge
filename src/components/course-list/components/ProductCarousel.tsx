@@ -50,11 +50,6 @@ const ArrowsContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down(725)]: {
     position: 'absolute',
     top: 0,
-    right: 20
-  },
-  [theme.breakpoints.down('xs')]: {
-    position: 'absolute',
-    top: 0,
     right: 0
   }
 }))
@@ -71,11 +66,20 @@ const SliderContainer = styled(Box)(({ theme }) => {
   }
 })
 
+const StyledSlider = styled(Slider)(({ theme }) => {
+  return {
+    [theme.breakpoints.down('xs')]: {
+      width: '90%',
+      margin: 'auto'
+    }
+  }
+})
+
 interface Props {
   productsperslide: number
 }
 
-function ProductCarousel ({ productsperslide }: Props): JSX.Element {
+function ProductCarousel({ productsperslide }: Props): JSX.Element {
   const [sliderRef, setSliderRef] = useState<Slider | null>(null)
 
   const slides = useMemo(() => {
@@ -104,7 +108,7 @@ function ProductCarousel ({ productsperslide }: Props): JSX.Element {
   return (
     <Container>
       <SliderContainer>
-        <Slider
+        <StyledSlider
           ref={(c) => setSliderRef(c)}
           arrows
           vertical
@@ -112,10 +116,9 @@ function ProductCarousel ({ productsperslide }: Props): JSX.Element {
           nextArrow={<></>}
           prevArrow={<></>}
           rows={2}
-          slidesToScroll={1}
-        >
+          slidesToScroll={1}>
           {slides}
-        </Slider>
+        </StyledSlider>
       </SliderContainer>
       <ArrowsContainer>
         <CarouselBack onClick={() => sliderRef?.slickPrev()} />

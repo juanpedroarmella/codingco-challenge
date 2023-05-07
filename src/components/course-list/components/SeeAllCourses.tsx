@@ -4,7 +4,6 @@ import CheckAllCourses from './CheckAllCourses'
 
 const Background = styled('a')(() => {
   return {
-    width: 3000,
     background: '#000000'
   }
 })
@@ -13,20 +12,19 @@ const Container = styled(Box)(() => {
   return {
     display: 'flex',
     height: '80px',
-    gap: 50
+    gap: 50,
+    position: 'relative'
   }
 })
 
-export default function SeeAllCourses (): JSX.Element {
+export default function SeeAllCourses(): JSX.Element {
   return (
     <Background href='#'>
       <Container>
-        <CheckAllCourses />
-        <CheckAllCourses />
-        <CheckAllCourses />
-        <CheckAllCourses />
-        <CheckAllCourses />
-        <CheckAllCourses />
+        <CheckAllCourses delay={1} />
+        <CheckAllCourses delay={5} />
+        <CheckAllCourses delay={9} />
+        <CheckAllCourses delay={13} />
       </Container>
     </Background>
   )
