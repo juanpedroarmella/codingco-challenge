@@ -2,21 +2,23 @@ import type { AppContext, AppProps } from 'next/app'
 import GlobalStyles from '@/styles/GlobalStyles'
 import { StyledEngineProvider } from '@mui/material/styles'
 import Layout from '@/components/layout/Layout'
-import ThemeSwitcher from '@/styles/ThemeProvider'
+import ThemeSwitcher, { ThemeNames } from '@/styles/ThemeProvider'
 import parser from 'ua-parser-js'
 
 interface MyAppProps extends AppProps {
   deviceType: string
+  theme: ThemeNames
 }
 
 export default function App ({
   Component,
   pageProps,
-  deviceType
+  deviceType,
+  theme
 }: MyAppProps): JSX.Element {
   return (
     <StyledEngineProvider injectFirst>
-      <ThemeSwitcher deviceType={deviceType}>
+      <ThemeSwitcher theme={theme} deviceType={deviceType}>
         <Layout>
           <GlobalStyles />
           <Component {...pageProps} />
@@ -27,6 +29,10 @@ export default function App ({
 }
 
 App.getInitialProps = async (context: AppContext) => {
+  const theme = Object.values(ThemeNames)[
+    Math.floor(Math.random() * Object.keys(ThemeNames).length)
+  ] as ThemeNames
+
   let deviceType
 
   if (context !== undefined) {
@@ -35,6 +41,7 @@ App.getInitialProps = async (context: AppContext) => {
   }
 
   return {
+    theme,
     deviceType
   }
 }

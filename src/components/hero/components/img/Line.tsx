@@ -1,7 +1,6 @@
 import { useThemeContext } from '@/styles/ThemeProvider'
-import styled from '@emotion/styled'
 import Box from '@mui/material/Box'
-import { Theme } from '@mui/material/styles'
+import { styled, Theme } from '@mui/material/styles'
 import { useMemo } from 'react'
 
 interface LineProps {

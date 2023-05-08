@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext } from 'react'
 import { light, dark, orange, yellow } from './Themes'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 
@@ -29,28 +29,18 @@ const themes = {
 interface ThemeProviderProps {
   deviceType: string
   children: React.ReactNode
+  theme: ThemeNames
 }
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
-  deviceType
+  deviceType,
+  theme
 }) => {
-  const [currentThemeName, setCurrentThemeName] = useState<ThemeNames>(
-    ThemeNames.LIGHT
-  )
-
-  useEffect(() => {
-    const randomIndex = Math.floor(
-      Math.random() * Object.keys(ThemeNames).length
-    )
-    const randomThemeName = Object.values(ThemeNames)[randomIndex] as ThemeNames
-    setCurrentThemeName(randomThemeName)
-  }, [])
-
-  const currentTheme = themes[currentThemeName]
+  const currentTheme = themes[theme]
 
   return (
-    <ThemeContext.Provider value={{ name: currentThemeName }}>
+    <ThemeContext.Provider value={{ name: theme }}>
       <MuiThemeProvider theme={currentTheme(deviceType)}>
         {children}
       </MuiThemeProvider>

@@ -21,14 +21,14 @@ const TwoNoticesContainer = styled(Box)(({ theme }) => {
     gap: '20px',
     width: '20%',
     [theme.breakpoints.down('lg')]: {
-      width: '30%'
+      width: '30%',
+      marginBottom: 25
     },
     [theme.breakpoints.down('md')]: {
       width: '40%'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '100%',
-      marginBottom: 25
+      width: '100%'
     }
   }
 })
