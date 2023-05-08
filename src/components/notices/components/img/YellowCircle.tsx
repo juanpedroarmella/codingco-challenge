@@ -13,13 +13,14 @@ const SvgCircle = styled('svg')(({ theme }) => {
   }
 })
 
-export default function YellowCircle(): JSX.Element {
+export default function YellowCircle (): JSX.Element {
   return (
     <SvgCircle
       xmlns='http://www.w3.org/2000/svg'
       width='208'
       height='208'
-      viewBox='0 0 208 208'>
+      viewBox='0 0 208 208'
+    >
       <circle
         id='svg_circulo_amarillo'
         data-name='svg_circulo amarillo'

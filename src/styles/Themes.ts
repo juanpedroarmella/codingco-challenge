@@ -1,4 +1,5 @@
 import { createTheme, Theme } from '@mui/material/styles'
+import mediaQuery from 'css-mediaquery'
 
 const defaultColors = {
   background: {
@@ -24,8 +25,19 @@ const fonts = {
 
 function createCustomTheme (
   backgroundDefault: string,
-  textPrimary: string
+  textPrimary: string,
+  deviceType: string
 ): Theme {
+  const ssrMatchMedia = (
+    query: string
+  ): {
+    matches: boolean
+  } => ({
+    matches: mediaQuery.match(query, {
+      width: deviceType === 'mobile' ? '0px' : '1024px'
+    })
+  })
+
   return createTheme({
     ...fonts,
     palette: {
@@ -37,13 +49,24 @@ function createCustomTheme (
         primary: textPrimary
       }
     },
-    ...breakpoints
+    ...breakpoints,
+    components: {
+      MuiUseMediaQuery: {
+        defaultProps: {
+          ssrMatchMedia
+        }
+      }
+    }
   })
 }
 
-const dark = createCustomTheme('#000000', '#E9E6E1')
-const light = createCustomTheme('#E9E6E1', '#000000')
-const orange = createCustomTheme('#E6511B', '#FFFFFF')
-const yellow = createCustomTheme('#E1DF3C', '#000000')
+const dark = (deviceType: string): Theme =>
+  createCustomTheme('#000000', '#E9E6E1', deviceType)
+const light = (deviceType: string): Theme =>
+  createCustomTheme('#E9E6E1', '#000000', deviceType)
+const orange = (deviceType: string): Theme =>
+  createCustomTheme('#E6511B', '#FFFFFF', deviceType)
+const yellow = (deviceType: string): Theme =>
+  createCustomTheme('#E1DF3C', '#000000', deviceType)
 
 export { dark, light, orange, yellow }

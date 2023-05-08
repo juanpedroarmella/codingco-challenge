@@ -19,6 +19,7 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
+    "css-mediaquery": "^0.1.2",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
@@ -26,10 +27,13 @@
     "react-dom": "18.2.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "typescript": "5.0.3"
+    "typescript": "5.0.3",
+    "ua-parser-js": "^1.0.35"
   },
   "devDependencies": {
+    "@types/css-mediaquery": "^0.1.1",
     "@types/react-slick": "^0.23.10",
+    "@types/ua-parser-js": "^0.7.36",
     "husky": "^8.0.3",
     "ts-standard": "^12.0.2"
   }

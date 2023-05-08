@@ -17,7 +17,7 @@ const Container = styled(Box)(() => {
   }
 })
 
-export default function SeeAllNotices(): JSX.Element {
+export default function SeeAllNotices (): JSX.Element {
   return (
     <Background href='#'>
       <Container>

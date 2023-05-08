@@ -27,10 +27,14 @@ const themes = {
 }
 
 interface ThemeProviderProps {
+  deviceType: string
   children: React.ReactNode
 }
 
-const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+const ThemeProvider: React.FC<ThemeProviderProps> = ({
+  children,
+  deviceType
+}) => {
   const [currentThemeName, setCurrentThemeName] = useState<ThemeNames>(
     ThemeNames.LIGHT
   )
@@ -47,7 +51,9 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ name: currentThemeName }}>
-      <MuiThemeProvider theme={currentTheme}>{children}</MuiThemeProvider>
+      <MuiThemeProvider theme={currentTheme(deviceType)}>
+        {children}
+      </MuiThemeProvider>
     </ThemeContext.Provider>
   )
 }
