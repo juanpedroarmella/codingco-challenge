@@ -11,7 +11,7 @@ const Container = styled(Box)(({ delay }: Props) => {
     gap: 20,
     height: '100%',
     width: 468,
-    '@keyframes horizontal-scroll': {
+    '@keyframes horizontal-scroll-notices': {
       '0%': {
         transform: 'translateX(0%)'
       },
@@ -19,7 +19,7 @@ const Container = styled(Box)(({ delay }: Props) => {
         transform: 'translateX(-510%)'
       }
     },
-    animation: 'horizontal-scroll 16s linear infinite',
+    animation: 'horizontal-scroll-notices 16s linear infinite',
     animationDelay: `${delay}s`,
     position: 'absolute',
     left: '100%'
@@ -28,7 +28,7 @@ const Container = styled(Box)(({ delay }: Props) => {
 
 const Text = styled(Typography)(() => {
   return {
-    color: '#E1DF3C',
+    color: '#E9E6E1',
     fontFamily: 'Work Sans',
     fontWeight: 'bold',
     fontSize: '25px'
@@ -43,18 +43,18 @@ export default function CheckAllCourses ({ delay }: Props): JSX.Element {
   return (
     <Container delay={delay}>
       <Image
-        src='/yellow-bear.svg'
+        src='/white-smile.svg'
         width={48}
         height={40}
-        alt='Yellow Bear Image'
+        alt='White Smile Image'
         loading='eager'
       />
-      <Text>Chequea todos los cursos</Text>
+      <Text>Revisá todas las noticias</Text>
       <Image
-        src='/yellow-arrows.svg'
+        src='/white-arrows.svg'
         width={45}
         height={19}
-        alt='Yellow Bear Image'
+        alt='White Arrow Image'
         loading='eager'
       />
     </Container>

@@ -79,7 +79,7 @@ interface Props {
   productsperslide: number
 }
 
-function ProductCarousel({ productsperslide }: Props): JSX.Element {
+function ProductCarousel ({ productsperslide }: Props): JSX.Element {
   const [sliderRef, setSliderRef] = useState<Slider | null>(null)
 
   const slides = useMemo(() => {
@@ -116,7 +116,8 @@ function ProductCarousel({ productsperslide }: Props): JSX.Element {
           nextArrow={<></>}
           prevArrow={<></>}
           rows={2}
-          slidesToScroll={1}>
+          slidesToScroll={1}
+        >
           {slides}
         </StyledSlider>
       </SliderContainer>

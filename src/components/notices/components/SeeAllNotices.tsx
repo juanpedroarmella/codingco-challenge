@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
-import CheckAllCourses from './CheckAllCourses'
+import CheckAllNotices from './CheckAllNotices'
 
 const Background = styled('a')(() => {
   return {
-    background: '#000000'
+    background: '#FF1F57'
   }
 })
 
@@ -17,15 +17,15 @@ const Container = styled(Box)(() => {
   }
 })
 
-export default function SeeAllCourses (): JSX.Element {
+export default function SeeAllNotices(): JSX.Element {
   return (
     <Background href='#'>
       <Container>
-        <CheckAllCourses delay={1} />
-        <CheckAllCourses delay={4.2} />
-        <CheckAllCourses delay={7.4} />
-        <CheckAllCourses delay={10.6} />
-        <CheckAllCourses delay={13.8} />
+        <CheckAllNotices delay={1} />
+        <CheckAllNotices delay={4.2} />
+        <CheckAllNotices delay={7.4} />
+        <CheckAllNotices delay={10.6} />
+        <CheckAllNotices delay={13.8} />
       </Container>
     </Background>
   )
