@@ -9,7 +9,7 @@ const Container = styled('div')(() => {
   }
 })
 
-export default function BearSection(): JSX.Element {
+export default function BearSection (): JSX.Element {
   return (
     <Container>
       <Image src='/bear.gif' alt='Bear Gif' fill />

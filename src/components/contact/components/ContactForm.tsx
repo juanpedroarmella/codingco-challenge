@@ -1,12 +1,23 @@
-import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
 
-const MainContainer = styled('div')(() => {
+const MainContainer = styled('div')(({ theme }) => {
   return {
     width: '40%',
     display: 'flex',
     flexDirection: 'column',
     fontFamily: 'Work Sans',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      alignItems: 'center',
+      marginLeft: 0,
+      '& h5': {
+        textAlign: 'center',
+        margin: 0
+      },
+      '& p': {
+        margin: '30px 0 20px 0'
+      }
+    },
     '& h5': {
       fontSize: 20,
       fontWeight: 'bold',
@@ -19,16 +30,32 @@ const MainContainer = styled('div')(() => {
   }
 })
 
-const Form = styled('form')(() => {
+const Form = styled('form')(({ theme }) => {
+  return {
+    marginTop: 10,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 15,
+    [theme.breakpoints.down('sm')]: {
+      width: '80%'
+    }
+  }
+})
+
+const ButtonSendContainer = styled('div')(({ theme }) => {
   return {
     display: 'flex',
     flexDirection: 'column',
     gap: 15,
-    width: '50%'
+    alignItems: 'start',
+    marginTop: 10,
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center'
+    }
   }
 })
 
-export default function ContactForm (): JSX.Element {
+export default function ContactForm(): JSX.Element {
   return (
     <MainContainer>
       <h5>¿Quieres saber más sobre nuestros cursos?</h5>
@@ -61,12 +88,12 @@ export default function ContactForm (): JSX.Element {
           required
           placeholder='Escribe un mensaje adicional'
         />
-        <Box display='grid' gap={2} width='50%' mt={2}>
+        <ButtonSendContainer>
           <small>* datos obligatorios</small>
           <button type='submit' name='submit'>
             Enviar
           </button>
-        </Box>
+        </ButtonSendContainer>
       </Form>
     </MainContainer>
   )

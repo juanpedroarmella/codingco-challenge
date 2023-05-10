@@ -31,8 +31,7 @@ const Container = styled(Box)(({ theme }) => {
     margin: 'auto',
     position: 'relative',
     [theme.breakpoints.down(576)]: {
-      paddingLeft: 30,
-      paddingRight: 30
+      padding: 'inherit 2.5%'
     },
     [theme.breakpoints.up(576)]: {
       maxWidth: theme.breakpoints.values.xs

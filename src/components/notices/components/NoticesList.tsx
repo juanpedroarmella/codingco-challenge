@@ -28,7 +28,7 @@ const TwoNoticesContainer = styled(Box)(({ theme }) => {
       width: '40%'
     },
     [theme.breakpoints.down('sm')]: {
-      width: '100%'
+      width: '90%'
     }
   }
 })

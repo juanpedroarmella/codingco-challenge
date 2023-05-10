@@ -20,7 +20,14 @@ const BgContainer = styled('section')(({ theme }) => {
       top: 0,
       backgroundColor: theme.palette.background.paper
     },
-    justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      '&:before': {
+        height: '25%',
+        width: '100%'
+      }
+    },
+    alignItems: 'center',
+    justifyContent: 'center',
     overflow: 'hidden'
   }
 })
@@ -28,11 +35,15 @@ const BgContainer = styled('section')(({ theme }) => {
 const MainContainer = styled('div')(({ theme }) => {
   return {
     display: 'flex',
-    justifyContent: 'sapce-between',
+    justifyContent: 'space-between',
     alignItems: 'flex-start',
-    margin: 'auto',
+    margin: '0 5%',
     position: 'relative',
-    gap: '20%',
+    gap: '10%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      gap: 50
+    },
     [theme.breakpoints.up('xs')]: {
       maxWidth: theme.breakpoints.values.xs
     },
