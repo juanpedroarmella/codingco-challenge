@@ -1,3 +1,6 @@
+import Input from '@/components/atoms/Input'
+import Select from '@/components/atoms/Select'
+import TextArea from '@/components/atoms/TextArea'
 import { styled } from '@mui/material/styles'
 
 const MainContainer = styled('div')(({ theme }) => {
@@ -36,6 +39,11 @@ const Form = styled('form')(({ theme }) => {
     display: 'flex',
     flexDirection: 'column',
     gap: 15,
+    '& > input,& > select,& > textarea,& button': {
+      fontSize: 16,
+      fontFamily: 'Work Sans',
+      fontStyle: 'normal'
+    },
     [theme.breakpoints.down('sm')]: {
       width: '80%'
     }
@@ -51,45 +59,69 @@ const ButtonSendContainer = styled('div')(({ theme }) => {
     marginTop: 10,
     [theme.breakpoints.down('sm')]: {
       alignItems: 'center'
+    },
+    '& > button': {
+      cursor: 'pointer',
+      backgroundColor: '#FFFFFF',
+      color: '#707070',
+      border: '1px solid #707070',
+      fontWeight: '700',
+      outline: '1px solid #707070',
+      padding: '15px 50px',
+      marginTop: 20,
+      '&:hover': {
+        transition: '0.3s',
+        color: '#E9E6E1',
+        borderColor: '#000000',
+        backgroundColor: '#707070'
+      }
     }
   }
 })
 
-export default function ContactForm(): JSX.Element {
+export default function ContactForm (): JSX.Element {
   return (
     <MainContainer>
       <h5>¿Quieres saber más sobre nuestros cursos?</h5>
       <p>Completa este formulario</p>
       <Form>
-        <label htmlFor='formName'>Nombre*</label>
-        <input type='text' name='name' id='formName' required />
-        <label htmlFor='formTelephoneNumber'>Télefono*</label>
-        <input
+        <Input
+          type='text'
+          name='name'
+          label='Nombre*'
+          required
+          placeholder='Escribe tu nombre'
+        />
+        <Input
+          label='Télefono*'
           type='number'
           name='telephoneNumber'
-          id='formTelephoneNumber'
           required
+          placeholder='Escribe tu télefono'
         />
-        <label htmlFor='formEmail'>E-mail*</label>
-        <input type='email' name='email' id='formEmail' required />
-        <label htmlFor='forminterestedCourse'>Curso de interés</label>
-        <select name='interestedCourse' id='forminterestedCourse' required>
+        <Input
+          label='E-mail*'
+          type='email'
+          name='email'
+          required
+          placeholder='Escribe tu correo electrónico'
+        />
+        <Select name='interestedCourse' required label='Curso de interés'>
           <option>Selecciona un curso</option>
           <option value='B. Art'>B. Art</option>
           <option value='SPRINGBREAK IN THE MORNING'>
             SPRINGBREAK IN THE MORNING
           </option>
           <option value='INTEGRAL 23/4'>INTEGRAL 23/4</option>
-        </select>
-        <label htmlFor='formMessage'>Mensaje</label>
-        <textarea
-          id='formMessage'
+        </Select>
+        <TextArea
+          label='Mensaje'
           name='mesagge'
           required
           placeholder='Escribe un mensaje adicional'
         />
         <ButtonSendContainer>
-          <small>* datos obligatorios</small>
+          <small>*datos obligatorios</small>
           <button type='submit' name='submit'>
             Enviar
           </button>
