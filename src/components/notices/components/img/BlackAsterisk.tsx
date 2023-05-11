@@ -8,8 +8,8 @@ const StyledImage = styled(Image)(({ theme }) => {
     right: -100,
     zIndex: -1,
     [theme.breakpoints.down('sm')]: {
-      top: 30,
-      right: -105
+      top: 50,
+      right: -107
     }
   }
 })

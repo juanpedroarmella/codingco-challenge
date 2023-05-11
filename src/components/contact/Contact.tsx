@@ -42,6 +42,7 @@ const MainContainer = styled('div')(({ theme }) => {
     gap: '10%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
+      margin: '50px 5%',
       gap: 50
     },
     [theme.breakpoints.up('xs')]: {

@@ -7,6 +7,7 @@ import MagentaCloud from './components/img/MagentaCloud'
 import MagentaCircle from './components/img/MagentaCircle'
 import GrayCloud from './components/img/GrayCloud'
 import YellowCircle from './components/img/YellowCircle'
+import useIsMobile from '@/hooks/useIsMobile'
 
 const BgContainer = styled(Box)(({ theme }) => {
   return {
@@ -31,7 +32,7 @@ const Container = styled(Box)(({ theme }) => {
     margin: 'auto',
     position: 'relative',
     [theme.breakpoints.down(576)]: {
-      padding: 'inherit 2.5%'
+      padding: '30px 2.5% 0 2.5%'
     },
     [theme.breakpoints.up(576)]: {
       maxWidth: theme.breakpoints.values.xs
@@ -58,19 +59,23 @@ const MainTitle = styled('h3')(({ theme }) => {
     fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 49,
-    marginBottom: 100
+    marginBottom: 100,
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: 40,
+      fontSize: 31
+    }
   }
 })
 
 export default function Notices (): JSX.Element {
+  const isMobile = useIsMobile()
   return (
     <BgContainer>
       <Container>
-        <MainTitle>Noticias Frescas</MainTitle>
+        <MainTitle>Noticias {isMobile ? <br /> : null} Frescas</MainTitle>
         <NoticesList />
       </Container>
       <MagentaCloud />
-
       <MagentaCircle />
       <GrayCloud />
       <BlackAsterisk />
