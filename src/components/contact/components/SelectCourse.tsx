@@ -2,6 +2,7 @@ import Select from '@mui/material/Select'
 import { styled } from '@mui/material/styles'
 
 const SelectCourse = styled(Select)(() => ({
+  marginTop: 10,
   borderRadius: 0,
   border: '1px solid #B7B7B7',
   height: 40,

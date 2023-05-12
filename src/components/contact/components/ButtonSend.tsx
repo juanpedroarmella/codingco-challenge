@@ -1,6 +1,7 @@
+import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles'
 
-const ButtonSend = styled('button')(() => {
+const ButtonSend = styled(Button)(() => {
   return {
     cursor: 'pointer',
     backgroundColor: '#FFFFFF',
@@ -9,6 +10,8 @@ const ButtonSend = styled('button')(() => {
     fontWeight: '700',
     outline: '1px solid #707070',
     padding: '15px 50px',
+    borderRadius: 0,
+    height: 50,
     marginTop: 20,
     '&:hover': {
       transition: '0.3s',
