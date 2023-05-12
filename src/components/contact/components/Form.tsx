@@ -1,9 +1,9 @@
 import InputLabel from '@/components/atoms/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
-import Select from '@mui/material/Select'
 import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
 import ButtonSend from './ButtonSend'
+import SelectCourse from './SelectCourse'
 
 const StyledForm = styled('form')(({ theme }) => {
   return {
@@ -31,7 +31,7 @@ const ButtonSendContainer = styled('div')(({ theme }) => {
   }
 })
 
-export default function Form(): JSX.Element {
+export default function Form (): JSX.Element {
   return (
     <StyledForm>
       <InputLabel htmlFor='formName'>Nombre*</InputLabel>
@@ -58,19 +58,20 @@ export default function Form(): JSX.Element {
         type='mail'
         placeholder='Escribe tu correo electrónico'
       />
+
       <InputLabel htmlFor='interestCourse'>Curso de interés</InputLabel>
 
-      <Select id='interestCourse' labelId='interestCourse' displayEmpty>
-        <MenuItem value=''>
+      <SelectCourse id='interestCourse' labelId='interestCourse' value=' '>
+        <MenuItem value=' '>
           <em>Selecciona un curso</em>
         </MenuItem>
-
         <MenuItem value='B. Art'>B. Art</MenuItem>
         <MenuItem value='SPRING BREAK IN THE MORNING'>
           SPRING BREAK IN THE MORNING
         </MenuItem>
         <MenuItem value='INTEGRAL 23/24'>INTEGRAL 23/24</MenuItem>
-      </Select>
+      </SelectCourse>
+
       <InputLabel htmlFor='formMessage'>Mensaje</InputLabel>
       <TextField
         id='formMessage'

@@ -55,6 +55,29 @@ function createCustomTheme (
         defaultProps: {
           ssrMatchMedia
         }
+      },
+      MuiTextField: {
+        styleOverrides: {
+          root: {
+            '&::placeholder': {
+              color: '#707070'
+            }
+          }
+        }
+      },
+      MuiMenuItem: {
+        styleOverrides: {
+          root: {
+            backgroundColor: '#FFFFFF'
+          }
+        }
+      },
+      MuiPaper: {
+        styleOverrides: {
+          root: {
+            background: '#FFFFFF'
+          }
+        }
       }
     }
   })
