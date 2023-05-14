@@ -8,7 +8,7 @@ const colors = {
   orange: '#E6511B'
 }
 
-const Container = styled('nav')(() => {
+const Container = styled('nav')(({ theme }) => {
   const { name: themeName } = useThemeContext()
   const background = colors[themeName]
   return {
@@ -17,11 +17,14 @@ const Container = styled('nav')(() => {
     height: 56,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none'
+    }
   }
 })
 
-const ExternalBorders = styled('ul')(({ theme }) => {
+const ExternalBorders = styled('ul')(() => {
   return {
     display: 'flex',
     justifyContent: 'center',
@@ -29,10 +32,7 @@ const ExternalBorders = styled('ul')(({ theme }) => {
     margin: 'auto',
     height: '60%',
     padding: 0,
-    borderLeft: '1px solid #000000',
-    [theme.breakpoints.down('sm')]: {
-      display: 'none'
-    }
+    borderLeft: '1px solid #000000'
   }
 })
 
@@ -49,7 +49,7 @@ const NavButton = styled('li')(() => {
   }
 })
 
-export default function BottomNavBar (): JSX.Element {
+export default function BottomNavBar(): JSX.Element {
   return (
     <Container>
       <ExternalBorders>
