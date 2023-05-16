@@ -3,21 +3,41 @@ import { styled } from '@mui/material/styles'
 
 const ButtonSend = styled(Button)(() => {
   return {
-    cursor: 'pointer',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: 'white',
     color: '#707070',
-    border: '1px solid #707070',
-    fontWeight: '700',
-    outline: '1px solid #707070',
+    borderColor: '#707070',
+    position: 'relative',
     padding: '15px 50px',
+    lineHeight: 1,
+    margin: '30px 0 0 0',
+    outline: 'none',
+    transition: '0.3s',
+    border: '2px solid black',
+    textDecoration: 'none',
+    fontWeight: 700,
+    fontFamily: 'Work Sans',
+    textTransform: 'capitalize',
+    fontSize: '1rem',
     borderRadius: 0,
-    height: 50,
-    marginTop: 20,
     '&:hover': {
-      transition: '0.3s',
       color: '#E9E6E1',
-      borderColor: '#000000',
-      backgroundColor: '#707070'
+      borderColor: 'black',
+      backgroundColor: 'transparent'
+    },
+    '&:before': {
+      zIndex: -1,
+      content: '""',
+      position: 'absolute',
+      left: 0,
+      top: 'auto',
+      bottom: 0,
+      right: 0,
+      backgroundColor: '#707070',
+      height: 0,
+      transition: '0.3s'
+    },
+    '&:hover:before': {
+      height: '100%'
     }
   }
 })

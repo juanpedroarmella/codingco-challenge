@@ -49,7 +49,7 @@ const NavButton = styled('li')(() => {
   }
 })
 
-export default function BottomNavBar(): JSX.Element {
+export default function BottomNavBar (): JSX.Element {
   return (
     <Container>
       <ExternalBorders>
