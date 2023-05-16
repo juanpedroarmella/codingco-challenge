@@ -11,6 +11,22 @@ import CheckIcon from '@mui/icons-material/Check'
 import InputLabel from '@/components/atoms/InputLabel'
 import InputContainer from './InputContainer'
 import ErrorText from './ErrorText'
+import { styled } from '@mui/material/styles'
+
+const StyledTextField = styled(TextField)(({ error, value }) => {
+  return {
+    '& div:before': {
+      borderBottomColor: value !== '' && error === false ? '#2e7d32' : 'auto'
+    },
+    '& .MuiInputBase-root.MuiInput-root:hover:not(.Mui-disabled, .Mui-error):before':
+      {
+        borderBottom: '1px solid rgba(0, 0, 0, 0.42)'
+      },
+    '& div:after': {
+      borderBottom: '1px solid rgba(0, 0, 0, 0.42)'
+    }
+  }
+})
 
 interface Props {
   value: string | number
@@ -25,7 +41,7 @@ interface Props {
   onBlur: FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>
 }
 
-export default function ContactTextField ({
+export default function ContactTextField({
   value,
   error,
   touched,
@@ -67,7 +83,7 @@ export default function ContactTextField ({
   return (
     <InputContainer>
       <InputLabel htmlFor={inputId}>{label}</InputLabel>
-      <TextField
+      <StyledTextField
         id={inputId}
         name={name}
         variant='standard'
