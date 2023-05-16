@@ -41,7 +41,7 @@ interface Props {
   onBlur: FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>
 }
 
-export default function ContactTextField({
+export default function ContactTextField ({
   value,
   error,
   touched,

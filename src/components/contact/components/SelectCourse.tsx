@@ -6,7 +6,7 @@ import { FocusEventHandler, ReactNode } from 'react'
 import ErrorText from './ErrorText'
 import InputContainer from './InputContainer'
 
-const StyledSelect = styled(Select)(() => ({
+const StyledSelect = styled(Select)(({ theme }) => ({
   marginTop: 10,
   borderRadius: 0,
   border: '1px solid #B7B7B7',
@@ -20,7 +20,13 @@ const StyledSelect = styled(Select)(() => ({
     width: 0,
     right: '10%',
     height: '100%',
-    borderLeft: '1px solid #B7B7B7'
+    borderLeft: '1px solid #B7B7B7',
+    [theme.breakpoints.down('sm')]: {
+      right: '12%'
+    },
+    [theme.breakpoints.down('xs')]: {
+      right: '17%'
+    }
   }
 }))
 
