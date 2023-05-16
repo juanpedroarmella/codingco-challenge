@@ -11,6 +11,9 @@ const StyledSelect = styled(Select)(() => ({
   borderRadius: 0,
   border: '1px solid #B7B7B7',
   height: 40,
+  '& fieldset:hover,& fieldset.MuiOutlinedInput-notchedOutline': {
+    border: '1px solid #B7B7B7 !important'
+  },
   '&::after': {
     content: '""',
     position: 'absolute',
@@ -29,7 +32,7 @@ interface Props {
   onBlur: FocusEventHandler<HTMLInputElement | HTMLTextAreaElement>
 }
 
-export default function SelectCourse ({
+export default function SelectCourse({
   onChange,
   value,
   error,
@@ -46,8 +49,7 @@ export default function SelectCourse ({
         labelId='interestCourse'
         name='course'
         value={value}
-        error={Boolean(error !== undefined && touched === true)}
-      >
+        error={Boolean(error !== undefined && touched === true)}>
         <MenuItem value=''>
           <em>Selecciona un curso</em>
         </MenuItem>
